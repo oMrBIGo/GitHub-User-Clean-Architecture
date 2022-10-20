@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="kotlin.jvm.functions.Function0"/>
+        <import type="kotlin.Unit"/>
+        <import type="android.view.View"/>
+
+        <variable
+            name="homeAction"
+            type="Function0&lt;Unit>" />
+
+        <variable
+            name="notificationsAction"
+            type="Function0&lt;Unit>" />
+
+        <variable
+            name="exploreAction"
+            type="Function0&lt;Unit>" />
+
+        <variable
+            name="profileAction"
+            type="Function0&lt;Unit>" />
+
+        <variable
+            name="isHomeSelected"
+            type="Boolean" />
+
+        <variable
+            name="isNotificationsSelected"
+            type="Boolean" />
+
+        <variable
+            name="isExploreAction"
+            type="Boolean" />
+
+        <variable
+            name="isProfileAction"
+            type="Boolean" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="@dimen/spacing10"
+        android:background="@color/background_light">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_25_view_bottom_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.25" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_50_view_bottom_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.50" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_75_view_bottom_menu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.75" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cly_home_view_bottom_menu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ripple_menu_light"
+            android:clickable="true"
+            android:onClick="@{() -> homeAction.invoke()}"
+            android:paddingBottom="@dimen/spacing_micro"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_25_view_bottom_menu"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imv_home_view_buttom_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_home"
+                android:tint="@{isHomeSelected?@color/color_select:@color/color_no_select}"
+                tools:ignore="UseAppTint" />
+
+            <TextView
+                android:id="@+id/txv_home_view_buttom_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_micro"
+                android:fontFamily="@font/default_noto_sans_thai"
+                android:text="@string/menu_home"
+                android:textColor="@{isHomeSelected?@color/color_select:@color/color_no_select}"
+                android:textSize="@dimen/font12"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imv_home_view_buttom_menu" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cly_notifications_view_bottom_menu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ripple_menu_light"
+            android:clickable="true"
+            android:onClick="@{() -> notificationsAction.invoke()}"
+            android:paddingBottom="@dimen/spacing_micro"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_50_view_bottom_menu"
+            app:layout_constraintStart_toStartOf="@id/guideline_25_view_bottom_menu"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imv_notifications_view_buttom_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_notifications"
+                android:tint="@{isNotificationsSelected?@color/color_select:@color/color_no_select}"
+                tools:ignore="UseAppTint" />
+
+            <TextView
+                android:id="@+id/txv_notifications_view_buttom_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_micro"
+                android:fontFamily="@font/default_noto_sans_thai"
+                android:text="@string/menu_notifications"
+                android:textColor="@{isNotificationsSelected?@color/color_select:@color/color_no_select}"
+                android:textSize="@dimen/font12"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imv_notifications_view_buttom_menu" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cly_search_view_bottom_menu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ripple_menu_light"
+            android:clickable="true"
+            android:onClick="@{() -> exploreAction.invoke()}"
+            android:paddingBottom="@dimen/spacing_micro"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_75_view_bottom_menu"
+            app:layout_constraintStart_toStartOf="@id/guideline_50_view_bottom_menu"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imv_search_view_buttom_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_search"
+                android:tint="@{isExploreAction?@color/color_select:@color/color_no_select}"
+                tools:ignore="UseAppTint" />
+
+            <TextView
+                android:id="@+id/txv_search_view_buttom_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_micro"
+                android:fontFamily="@font/default_noto_sans_thai"
+                android:text="@string/menu_search"
+                android:textColor="@{isExploreAction?@color/color_select:@color/color_no_select}"
+                android:textSize="@dimen/font12"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imv_search_view_buttom_menu" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cly_profile_view_bottom_menu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ripple_menu_light"
+            android:clickable="true"
+            android:onClick="@{() -> exploreAction.invoke()}"
+            android:paddingBottom="@dimen/spacing_micro"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guideline_75_view_bottom_menu"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imv_profile_view_buttom_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing10"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_profile"
+                android:tint="@{isProfileAction?@color/color_select:@color/color_no_select}"
+                tools:ignore="UseAppTint" />
+
+            <TextView
+                android:id="@+id/txv_profile_view_buttom_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_micro"
+                android:fontFamily="@font/default_noto_sans_thai"
+                android:text="@string/menu_profile"
+                android:textColor="@{isProfileAction?@color/color_select:@color/color_no_select}"
+                android:textSize="@dimen/font12"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imv_profile_view_buttom_menu" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

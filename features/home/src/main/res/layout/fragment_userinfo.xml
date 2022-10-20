@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="org.cn.github.home.userInfo.UserInfoViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar_userInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background"
+            android:elevation="0dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar_userInfo"
+                isHaveRightMenu="@{true}"
+                navigationIconRes="@{viewModel.toolbar.navigationIconRes}"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/background">
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/imv_shared"
+                    android:layout_width="@dimen/spacing30"
+                    android:layout_height="@dimen/spacing30"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="@dimen/spacing18"
+                    android:background="@android:color/transparent"
+                    android:padding="@dimen/spacing10"
+                    android:onClick="@{() -> viewModel.openShare(viewModel.userInfoResult.htmlUrl,context)}"
+                    android:src="@drawable/ic_shared"
+                    android:tint="@color/color_icon"
+                    tools:ignore="ContentDescription" />
+
+            </com.google.android.material.appbar.MaterialToolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/background_back"
+            android:descendantFocusability="blocksDescendants"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appbar_userInfo"
+            app:layout_constraintVertical_bias="0.0">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout_a_userInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/background"
+                    android:paddingStart="@dimen/spacing_medium"
+                    android:paddingTop="@dimen/spacing15"
+                    android:paddingEnd="@dimen/spacing_medium"
+                    android:paddingBottom="@dimen/spacing_medium"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/civ_avatar_userInfo"
+                        imageUrl="@{viewModel.userInfoResult.avatarUrl}"
+                        android:layout_width="@dimen/spacing60"
+                        android:layout_height="@dimen/spacing60"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacing15"
+                        app:layout_constraintBottom_toBottomOf="@+id/civ_avatar_userInfo"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/civ_avatar_userInfo"
+                        app:layout_constraintTop_toTopOf="@+id/civ_avatar_userInfo">
+
+                        <TextView
+                            android:id="@+id/txv_name_userInfo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:minLines="1"
+                            android:singleLine="true"
+                            android:text="@{viewModel.userInfoResult.name}"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/font22"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/txv_login_userInfo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:minLines="1"
+                            android:singleLine="true"
+                            android:text="@{viewModel.userInfoResult.login}"
+                            android:textColor="@color/text_hint_input"
+                            android:textSize="@dimen/font14"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/txv_name_userInfo" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/civ_avatar_userInfo">
+
+                        <TextView
+                            android:id="@+id/txv_info_userInfo"
+                            isVisible='@{!viewModel.userInfoResult.bio.empty}'
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing15"
+                            android:text="@{viewModel.userInfoResult.bio}"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/font14"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/company_userInfo"
+                            isVisible='@{!viewModel.userInfoResult.company.empty}'
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing15"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/txv_info_userInfo">
+
+                            <ImageView
+                                android:id="@+id/imv_company_userInfo"
+                                android:layout_width="@dimen/spacing_medium"
+                                android:layout_height="@dimen/spacing_medium"
+                                android:src="@drawable/ic_company"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:tint="@color/color_icon_hint" />
+
+                            <TextView
+                                android:id="@+id/txv_company_userInfo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/spacing5"
+                                android:text="@{viewModel.userInfoResult.company}"
+                                android:textColor="@color/text_color"
+                                android:textSize="@dimen/font14"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toEndOf="@+id/imv_company_userInfo"
+                                app:layout_constraintTop_toTopOf="@+id/imv_company_userInfo" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/location_userInfo"
+                            isVisible='@{!viewModel.userInfoResult.location.empty}'
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing15"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/company_userInfo">
+
+                            <ImageView
+                                android:id="@+id/imv_location_userInfo"
+                                android:layout_width="@dimen/spacing_medium"
+                                android:layout_height="@dimen/spacing_medium"
+                                android:src="@drawable/ic_location"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:tint="@color/color_icon_hint" />
+
+                            <TextView
+                                android:id="@+id/txv_location_userInfo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/spacing5"
+                                android:text="@{viewModel.userInfoResult.location}"
+                                android:textColor="@color/text_color"
+                                android:textSize="@dimen/font14"
+                                app:layout_constraintStart_toEndOf="@+id/imv_location_userInfo"
+                                app:layout_constraintTop_toTopOf="@+id/imv_location_userInfo" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/link_userInfo"
+                            isVisible='@{!viewModel.userInfoResult.blog.empty}'
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing15"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/location_userInfo">
+
+                            <ImageView
+                                android:id="@+id/imv_link_userInfo"
+                                android:layout_width="@dimen/spacing_medium"
+                                android:layout_height="@dimen/spacing_medium"
+                                android:src="@drawable/ic_link"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:tint="@color/color_icon_hint" />
+
+                            <TextView
+                                android:id="@+id/txv_link_userInfo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/spacing5"
+                                android:onClick="@{() -> viewModel.openWeb(viewModel.userInfoResult.blog,context)}"
+                                android:text="@{viewModel.userInfoResult.blog}"
+                                android:textColor="@color/text_color"
+                                android:textSize="@dimen/font14"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toEndOf="@+id/imv_link_userInfo"
+                                app:layout_constraintTop_toTopOf="@+id/imv_link_userInfo" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/web_userInfo"
+                            isVisible='@{!viewModel.userInfoResult.twitterUsername.empty}'
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing15"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/link_userInfo">
+
+                            <ImageView
+                                android:id="@+id/imv_web_userInfo"
+                                android:layout_width="@dimen/spacing_medium"
+                                android:layout_height="@dimen/spacing_medium"
+                                android:src="@drawable/ic_web"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:tint="@color/color_icon_hint" />
+
+                            <TextView
+                                android:id="@+id/txv_web_userInfo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/spacing5"
+                                android:text="@{viewModel.userInfoResult.twitterUsername}"
+                                android:textColor="@color/text_color"
+                                android:textSize="@dimen/font14"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="@+id/imv_web_userInfo"
+                                app:layout_constraintStart_toEndOf="@+id/imv_web_userInfo"
+                                app:layout_constraintTop_toTopOf="@+id/imv_web_userInfo" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/email_userInfo"
+                            isVisible='@{!viewModel.userInfoResult.email.empty}'
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing15"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/web_userInfo">
+
+                            <ImageView
+                                android:id="@+id/imv_email_userInfo"
+                                android:layout_width="@dimen/spacing_medium"
+                                android:layout_height="@dimen/spacing_medium"
+                                android:src="@drawable/ic_email"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:tint="@color/color_icon_hint" />
+
+                            <TextView
+                                android:id="@+id/txv_email_userInfo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/spacing5"
+                                android:text="@{viewModel.userInfoResult.email}"
+                                android:textColor="@color/text_color"
+                                android:textSize="@dimen/font14"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="@+id/imv_email_userInfo"
+                                app:layout_constraintStart_toEndOf="@+id/imv_email_userInfo"
+                                app:layout_constraintTop_toTopOf="@+id/imv_email_userInfo" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:id="@+id/follower_userInfo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing15"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/email_userInfo">
+
+                            <ImageView
+                                android:id="@+id/imv_follower_userInfo"
+                                android:layout_width="@dimen/spacing_medium"
+                                android:layout_height="@dimen/spacing_medium"
+                                android:src="@drawable/ic_profile"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                app:tint="@color/color_icon_hint" />
+
+                            <TextView
+                                android:id="@+id/txv_follower_userInfo"
+                                textString="@{@string/user_info_followers(viewModel.userInfoResult.followers)}"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/spacing5"
+                                android:textColor="@color/text_color"
+                                android:onClick="@{() -> viewModel.displayFollow(viewModel.login)}"
+                                android:textSize="@dimen/font14"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="@+id/imv_follower_userInfo"
+                                app:layout_constraintStart_toEndOf="@+id/imv_follower_userInfo"
+                                app:layout_constraintTop_toTopOf="@+id/imv_follower_userInfo" />
+
+                            <TextView
+                                android:id="@+id/txv_following_userInfo"
+                                textString="@{@string/user_info_following(viewModel.userInfoResult.following)}"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/spacing5"
+                                android:textColor="@color/text_color"
+                                android:textSize="@dimen/font14"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="@+id/txv_follower_userInfo"
+                                app:layout_constraintStart_toEndOf="@+id/txv_follower_userInfo"
+                                app:layout_constraintTop_toTopOf="@+id/txv_follower_userInfo" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout_b_userInfo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/spacing20"
+                    android:background="@color/background"
+                    android:paddingTop="@dimen/spacing15"
+                    android:paddingBottom="@dimen/spacing_medium"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout_a_userInfo">
+
+                    <ImageView
+                        android:id="@+id/imv_pinned_userInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="@dimen/spacing_medium"
+                        android:src="@drawable/ic_pin"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:tint="@color/color_icon_hint" />
+
+                    <TextView
+                        android:id="@+id/txv_pinned_userInfo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacing10"
+                        android:text="@string/user_info_pinned"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/font16"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@+id/imv_pinned_userInfo"
+                        app:layout_constraintStart_toEndOf="@+id/imv_pinned_userInfo"
+                        app:layout_constraintTop_toTopOf="@+id/imv_pinned_userInfo" />
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rcv_pinned_userInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/imv_pinned_userInfo" />
+
+                    <View
+                        android:id="@+id/view_userInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/spacing05"
+                        android:alpha="0.5"
+                        android:background="@color/line_input"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/rcv_pinned_userInfo" />
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/btn_repositories_userInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="@dimen/spacing_medium"
+                        android:paddingTop="@dimen/spacing10"
+                        android:paddingBottom="@dimen/spacing10"
+                        android:onClick="@{() -> viewModel.displayRepositories(viewModel.login)}"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/view_userInfo">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_repo_userInfo"
+                            android:layout_width="@dimen/spacing33"
+                            android:layout_height="@dimen/spacing33"
+                            app:cardBackgroundColor="@color/color_41434f"
+                            app:cardCornerRadius="@dimen/spacing4"
+                            app:cardElevation="0dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:id="@+id/imv_repo_userInfo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:padding="@dimen/spacing_small"
+                                android:src="@drawable/ic_repositories"
+                                app:tint="@color/white" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:id="@+id/txv_repo_userInfo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/spacing10"
+                            android:text="@string/repositories"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/font14"
+                            app:layout_constraintBottom_toBottomOf="@+id/cv_repo_userInfo"
+                            app:layout_constraintStart_toEndOf="@+id/cv_repo_userInfo"
+                            app:layout_constraintTop_toTopOf="@+id/cv_repo_userInfo" />
+
+                        <TextView
+                            android:id="@+id/txv_repo_amount_userInfo"
+                            textNumberInt="@{viewModel.userInfoResult.publicRepos}"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:paddingEnd="@dimen/spacing_medium"
+                            android:textColor="@color/text_hint_input"
+                            android:textSize="@dimen/font14"
+                            app:layout_constraintBottom_toBottomOf="@+id/txv_repo_userInfo"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/txv_repo_userInfo" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/btn_orgs_userInfo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="@dimen/spacing_medium"
+                        android:paddingTop="@dimen/spacing10"
+                        android:paddingBottom="@dimen/spacing10"
+                        android:onClick="@{() -> viewModel.displayRepositories(viewModel.login)}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/btn_repositories_userInfo">
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/cv_orgs_userInfo"
+                            android:layout_width="@dimen/spacing33"
+                            android:layout_height="@dimen/spacing33"
+                            app:cardBackgroundColor="@color/color_ff8b38"
+                            app:cardCornerRadius="@dimen/spacing4"
+                            app:cardElevation="0dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                            <ImageView
+                                android:id="@+id/imv_orgs_userInfo"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:padding="@dimen/spacing_small"
+                                android:src="@drawable/ic_company"
+                                app:tint="@color/white" />
+
+                        </androidx.cardview.widget.CardView>
+
+                        <TextView
+                            android:id="@+id/txv_orgs_userInfo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/spacing10"
+                            android:text="@string/user_info_organizations"
+                            android:textColor="@color/text_color"
+                            android:textSize="@dimen/font14"
+                            app:layout_constraintBottom_toBottomOf="@+id/cv_orgs_userInfo"
+                            app:layout_constraintStart_toEndOf="@+id/cv_orgs_userInfo"
+                            app:layout_constraintTop_toTopOf="@+id/cv_orgs_userInfo" />
+
+                        <TextView
+                            android:id="@+id/txv_orgs_amount_userInfo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:paddingEnd="@dimen/spacing_medium"
+                            android:textColor="@color/text_hint_input"
+                            android:textSize="@dimen/font14"
+                            app:layout_constraintBottom_toBottomOf="@+id/txv_orgs_userInfo"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/txv_orgs_userInfo" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="api_key" translatable="false">"AIzaSyAn9RH-aqbA7NsZtvPsX74Y8RgVYOZ3x54"</string>
+
+    <string name="language_select">Select Language</string>
+
+    <string name="General.cancel">Cancel</string>
+    <string name="General.done">Done</string>
+    <string name="General.ok">OK</string>
+    <string name="General.close">Close</string>
+    <string name="General.yes">Yes</string>
+    <string name="General.no">No</string>
+
+    <string name="Error.Default.message">Please try again later</string>
+    <string name="Error.Default.title">Sorry, something went wrong</string>
+    <string name="Error.Network.title">Network Error !!</string>
+    <string name="Error.NotFound.data">Not Found!!</string>
+
+    <string name="confirm">confirm</string>
+    <string name="back">back</string>
+    <string name="cancel">cancel</string>
+    <string name="next">next</string>
+    <string name="close">close</string>
+
+    <string name="night_mode">NIGHT MODE</string>
+    <string name="light_mode">LIGHT MODE</string>
+
+    <string name="language_english">ENGLISH</string>
+    <string name="language_thai">THAI</string>
+
+    <!--MENU-->
+    <string name="menu_home">Home</string>
+    <string name="menu_notifications">Notifications</string>
+    <string name="menu_search">Search</string>
+    <string name="menu_profile">Profile</string>
+
+    <!--HOME-->
+    <string name="home_title">HOME</string>
+    <string name="home_my_work">Github User</string>
+    <string name="home_activities">Activities</string>
+    <string name="home_activities_des">You can see all of GitHub activities here. \nGitHub Thailand</string>
+    <string name="home_activities_more">Activities More</string>
+
+    <!--USER_MORE-->
+    <string name="user_title">All Users</string>
+    <string name="repositories">Repositories</string>
+    <string name="followers">Followers</string>
+    <string name="website">Website</string>
+
+    <!--REPOSITORIES-->
+    <string name="repositories_user">repositories by %s</string>
+
+    <!--USER_INFO-->
+    <string name="user_info_followers">%s followers</string>
+    <string name="user_info_following">%s following</string>
+    <string name="user_info_pinned">Pinned</string>
+    <string name="user_info_organizations">Organizations</string>
+</resources>

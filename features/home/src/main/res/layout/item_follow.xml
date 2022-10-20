@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="model"
+            type="org.cn.github.domain.model.UserList" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing15"
+        android:background="@color/background"
+        android:paddingBottom="@dimen/spacing15">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/civ_user_follow"
+            imageUrl="@{model.avatarUrl}"
+            android:layout_width="@dimen/spacing40"
+            android:layout_height="@dimen/spacing40"
+            android:src="@drawable/ic_github_logo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="@color/red" />
+
+        <TextView
+            android:id="@+id/txv_title_follow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing15"
+            android:text="@{model.login}"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/font16"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/civ_user_follow"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txv_login_follow"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing15"
+            android:text="@{model.type}"
+            android:textColor="@color/text_hint_input"
+            android:textSize="@dimen/font14"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/civ_user_follow"
+            app:layout_constraintTop_toBottomOf="@+id/txv_title_follow" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

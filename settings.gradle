@@ -1,0 +1,8 @@
+include ':app'
+include ':data'
+include ':domain'
+include ':common-res'
+include ':common-ui'
+include ':navigation'
+include ':features:home'
+include ':features:splashscreen'

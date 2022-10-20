@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_userinfo"
+    app:startDestination="@id/userinfoFragment">
+
+    <fragment
+        android:id="@+id/userinfoFragment"
+        android:name="org.cn.github.home.userInfo.UserInfoFragment">
+
+        <argument
+            android:name="login"
+            app:argType="string"/>
+
+        <action
+            android:id="@+id/action_userinfoFragment_to_nav_repositories"
+            app:destination="@+id/nav_repositories">
+
+            <argument
+                android:name="login"
+                app:argType="string"/>
+
+        </action>
+
+        <action
+            android:id="@+id/action_userinfoFragment_to_nav_follow"
+            app:destination="@+id/nav_follow">
+
+            <argument
+                android:name="login"
+                app:argType="string"/>
+
+        </action>
+
+    </fragment>
+
+</navigation>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_main"
+    app:startDestination="@id/splashScreenFragment">
+
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="org.cn.github.splashscreen.SplashScreenFragment">
+
+        <action
+            android:id="@+id/action_splashScreenFragment_to_nav_home"
+            app:destination="@+id/nav_home"/>
+
+    </fragment>
+
+    <include app:graph="@navigation/nav_home" />
+    <include app:graph="@navigation/nav_user_more"/>
+    <include app:graph="@navigation/nav_repositories"/>
+    <include app:graph="@navigation/nav_follow"/>
+    <include app:graph="@navigation/nav_userinfo"/>
+
+</navigation>

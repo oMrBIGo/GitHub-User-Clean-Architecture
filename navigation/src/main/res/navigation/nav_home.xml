@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_home"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="org.cn.github.home.HomeFragment">
+
+        <action
+            android:id="@+id/action_homeFragment_to_nav_user_more"
+            app:destination="@+id/nav_user_more"/>
+
+        <action
+            android:id="@+id/action_homeFragment_to_nav_userinfo"
+            app:destination="@+id/nav_userinfo">
+
+            <argument
+                android:name="login"
+                app:argType="string"/>
+
+        </action>
+
+    </fragment>
+
+</navigation>

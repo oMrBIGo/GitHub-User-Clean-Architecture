@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="language_select">เลือกภาษา</string>
+
+    <string name="General.cancel">Cancel</string>
+    <string name="General.done">Done</string>
+    <string name="General.ok">ตกลง</string>
+    <string name="General.close">Close</string>
+    <string name="General.yes">Yes</string>
+    <string name="General.no">No</string>
+
+    <string name="Error.Default.message">Please try again later</string>
+    <string name="Error.Default.title">Sorry, something went wrong</string>
+    <string name="Error.Network.title">Network Error !!</string>
+    <string name="Error.NotFound.data">Not Found!!</string>
+
+    <string name="confirm">ยืนยัน</string>
+    <string name="back">ย้อนกลับ</string>
+    <string name="cancel">ยกเลิก</string>
+    <string name="next">ถัดไป</string>
+    <string name="close">ปิด</string>
+
+    <string name="night_mode">โหมดกลางคืน</string>
+    <string name="light_mode">โหมดกลางวัน</string>
+
+    <string name="language_english">อังกฤษ</string>
+    <string name="language_thai">ไทย</string>
+
+    <!--MENU-->
+    <string name="menu_home">หน้าหลัก</string>
+    <string name="menu_notifications">การแจ้งเตือน</string>
+    <string name="menu_search">ค้นหา</string>
+    <string name="menu_profile">โปรไฟล์</string>
+
+    <!--HOME-->
+    <string name="home_title">หน้าหลัก</string>
+    <string name="home_my_work">ผู้ใช้งานกิตฮับ</string>
+    <string name="home_activities">กิจกรรม</string>
+    <string name="home_activities_des">คุณสามารถดูกิจกรรมทั้งหมดของกิตฮับได้ที่นี่ \nGitHub Thailand</string>
+    <string name="home_activities_more">ดูกิจกรรมทั้งหมด</string>
+
+    <!--USER_MORE-->
+    <string name="user_title">ผู้ใช้งานทั้งหมด</string>
+    <string name="repositories">ผลงาน</string>
+    <string name="followers">ผู้ติดตาม</string>
+    <string name="website">เว็บไซต์</string>
+
+    <!--REPOSITORIES-->
+    <string name="repositories_user">ผลงาน %s</string>
+
+    <!--USER_INFO-->
+    <string name="user_info_followers">%s ผู้ติดตาม</string>
+    <string name="user_info_following">• %s กำลังติดตาม</string>
+    <string name="user_info_pinned">ปัดหมุด</string>
+    <string name="user_info_organizations">องค์กร</string>
+
+</resources>

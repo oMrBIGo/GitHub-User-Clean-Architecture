@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="language"
+            type="org.cn.github.domain.constant.Language" />
+
+        <variable
+            name="viewModel"
+            type="org.cn.github.home.HomeViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appbar_main"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background"
+            android:elevation="0dp"
+            android:paddingTop="@dimen/spacing2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar_main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/background">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="@string/home_title"
+                    android:textColor="@color/text_color"
+                    android:textSize="@dimen/font18"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/imv_search"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="@dimen/spacing_medium"
+                    android:textSize="@dimen/font18"
+                    android:textStyle="bold"
+                    android:text="@string/language_select"
+                    android:textColor="@color/colorPrimary"
+                    tools:ignore="ContentDescription" />
+
+            </com.google.android.material.appbar.MaterialToolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint1_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/spacing_medium"
+            android:paddingEnd="@dimen/spacing_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/appbar_main">
+
+            <TextView
+                android:id="@+id/txv_github_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_medium"
+                android:text="@string/home_my_work"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/font16"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/imv_user_more"
+                android:layout_width="@dimen/spacing20"
+                android:layout_height="@dimen/spacing20"
+                android:layout_gravity="end"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_more"
+                android:onClick="@{() -> viewModel.displayUserMore()}"
+                app:layout_constraintBottom_toBottomOf="@+id/txv_github_home"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/txv_github_home"
+                tools:ignore="ContentDescription"
+                app:tint="@color/color_icon_hint" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcv_user_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_medium"
+            android:layout_marginTop="@dimen/spacing20"
+            android:layout_marginEnd="@dimen/spacing_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraint1_home" />
+
+        <View
+            android:id="@+id/view1_home"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/spacing05"
+            android:layout_marginTop="@dimen/spacing5"
+            android:alpha="0.5"
+            android:background="@color/line_input"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rcv_user_home" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint2_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_medium"
+            android:layout_marginEnd="@dimen/spacing_medium"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view1_home">
+
+            <TextView
+                android:id="@+id/txv_activities_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing15"
+                android:text="@string/home_activities"
+                android:textColor="@color/text_color"
+                android:textSize="@dimen/font16"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txv_activities_des_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing20"
+                android:gravity="center"
+                android:text="@string/home_activities_des"
+                android:textAlignment="center"
+                android:textColor="@color/text_hint_input"
+                android:textSize="@dimen/font16"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txv_activities_home" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_activities_home"
+                style="@style/WhiteButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing15"
+                android:text="@string/home_activities_more"
+                android:textAllCaps="true"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txv_activities_des_home" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/view2_home"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/spacing05"
+            android:layout_marginTop="@dimen/spacing33"
+            android:alpha="0.5"
+            android:background="@color/line_input"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/constraint2_home" />
+
+        <include
+            android:id="@+id/menu_profile"
+            layout="@layout/view_bottom_menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:isHomeSelected="@{true}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
