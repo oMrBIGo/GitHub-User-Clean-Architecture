@@ -1,11 +1,7 @@
 package org.cn.github.home.adapter
 
-import android.content.Context
-import android.net.Uri
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import androidx.browser.customtabs.CustomTabsIntent
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import org.cn.github.domain.model.UserList
@@ -18,7 +14,7 @@ class UserListAdapter(
 ) : RecyclerView.Adapter<UserListAdapter.ViewHolder>() {
 
     interface OnItemClickListener {
-        fun onItemClickListener(login: String)
+        fun onItemClickListener(login: String, avatarUrl: String)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -49,7 +45,8 @@ class UserListAdapter(
             binding.model = result[position]
             binding.root.setOnClickListener {
                 onItemClickListener.onItemClickListener(
-                    result[position].login
+                    result[position].login,
+                    result[position].avatarUrl
                 )
             }
             binding.executePendingBindings()

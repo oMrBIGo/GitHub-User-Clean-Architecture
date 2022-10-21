@@ -44,7 +44,7 @@
     <string name="user_title">ผู้ใช้งานทั้งหมด</string>
     <string name="repositories">ผลงาน</string>
     <string name="followers">ผู้ติดตาม</string>
-    <string name="website">เว็บไซต์</string>
+    <string name="organization">องค์กร</string>
 
     <!--REPOSITORIES-->
     <string name="repositories_user">ผลงาน %s</string>
@@ -54,5 +54,8 @@
     <string name="user_info_following">• %s กำลังติดตาม</string>
     <string name="user_info_pinned">ปัดหมุด</string>
     <string name="user_info_organizations">องค์กร</string>
+
+    <!--SEARCH-->
+    <string name="search_title">ค้นหา</string>
 
 </resources>

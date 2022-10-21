@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="model"
+            type="org.cn.github.domain.model.RepoList" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_medium"
+        android:layout_marginStart="@dimen/spacing_medium"
+        android:layout_marginBottom="@dimen/spacing_medium">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_bg_pinned_repo"
+            android:layout_width="@dimen/fontWeight250"
+            android:layout_height="@dimen/fontWeight150"
+            android:foreground="@drawable/bg_roundrect_ripple_light_border"
+            app:cardBackgroundColor="@color/card_background"
+            app:cardCornerRadius="@dimen/spacing5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/spacing10">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/civ_pinned_repo"
+                    android:layout_width="@dimen/spacing15"
+                    android:layout_height="@dimen/spacing15"
+                    android:layout_marginStart="@dimen/spacing6"
+                    android:layout_marginTop="@dimen/spacing6"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txv_user_pinned_repo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing5"
+                    android:textColor="@color/text_hint_input"
+                    android:textSize="@dimen/font16"
+                    android:minLines="1"
+                    android:singleLine="true"
+                    app:layout_constraintBottom_toBottomOf="@+id/civ_pinned_repo"
+                    app:layout_constraintStart_toEndOf="@+id/civ_pinned_repo"
+                    app:layout_constraintTop_toTopOf="@+id/civ_pinned_repo" />
+
+                <TextView
+                    android:id="@+id/txv_title_pinned_repo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text='@{!model.name.empty ? model.name : "-"}'
+                    android:layout_marginTop="@dimen/spacing3"
+                    android:textSize="@dimen/font16"
+                    android:textColor="@color/text_color"
+                    android:textStyle="bold"
+                    android:minLines="1"
+                    android:singleLine="true"
+                    app:layout_constraintTop_toBottomOf="@+id/civ_pinned_repo"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="@dimen/spacing6"/>
+
+                <TextView
+                    android:id="@+id/txv_des_pinned_repo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text='@{!model.description.empty ? model.description : "-"}'
+                    android:textSize="@dimen/font16"
+                    android:textColor="@color/text_color"
+                    android:minLines="1"
+                    android:singleLine="true"
+                    app:layout_constraintTop_toBottomOf="@+id/txv_title_pinned_repo"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginStart="@dimen/spacing6"/>
+
+                <ImageView
+                    android:id="@+id/imv_star_pinned_repo"
+                    android:layout_width="@dimen/spacing20"
+                    android:layout_height="@dimen/spacing20"
+                    android:layout_marginTop="@dimen/spacing5"
+                    android:src="@drawable/ic_star"
+                    app:tint="@color/yellow"
+                    android:paddingEnd="@dimen/spacing1"
+                    android:paddingStart="@dimen/spacing1"
+                    android:paddingBottom="@dimen/spacing1"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <TextView
+                    android:id="@+id/txv_star_pinned_repo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    textNumberInt="@{model.stargazers_count}"
+                    android:textColor="@color/text_hint_input"
+                    android:textSize="@dimen/font16"
+                    android:layout_marginStart="@dimen/spacing3"
+                    app:layout_constraintBottom_toBottomOf="@+id/imv_star_pinned_repo"
+                    app:layout_constraintStart_toEndOf="@+id/imv_star_pinned_repo"
+                    app:layout_constraintTop_toTopOf="@+id/imv_star_pinned_repo" />
+
+                <ImageView
+                    android:id="@+id/imv_circle_pinned_repo"
+                    android:layout_width="@dimen/spacing20"
+                    android:layout_height="@dimen/spacing20"
+                    android:src="@drawable/ic_circle"
+                    android:padding="@dimen/spacing4"
+                    app:tint="#2196F3"
+                    android:layout_marginStart="@dimen/spacing5"
+                    app:layout_constraintBottom_toBottomOf="@+id/txv_star_pinned_repo"
+                    app:layout_constraintStart_toEndOf="@+id/txv_star_pinned_repo"
+                    app:layout_constraintTop_toTopOf="@+id/txv_star_pinned_repo" />
+
+                <TextView
+                    android:id="@+id/txv_circle_pinned_repo"
+                    android:text='@{!model.language.empty ? model.language : "-"}'
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/text_hint_input"
+                    android:textSize="@dimen/font16"
+                    android:layout_marginStart="@dimen/spacing3"
+                    app:layout_constraintBottom_toBottomOf="@+id/imv_circle_pinned_repo"
+                    app:layout_constraintStart_toEndOf="@+id/imv_circle_pinned_repo"
+                    app:layout_constraintTop_toTopOf="@+id/imv_circle_pinned_repo" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

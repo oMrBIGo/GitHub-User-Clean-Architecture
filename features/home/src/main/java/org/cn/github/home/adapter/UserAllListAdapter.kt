@@ -19,7 +19,7 @@ class UserAllListAdapter(
 ) : RecyclerView.Adapter<UserAllListAdapter.ViewHolder>() {
 
     interface OnItemClickListener {
-        fun onItemClickListener(login: String)
+        fun onItemClickListener(login: String, avatar: String)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -50,7 +50,8 @@ class UserAllListAdapter(
             binding.model = result[position]
             binding.root.setOnClickListener {
                 onItemClickListener.onItemClickListener(
-                    result[position].login
+                    result[position].login,
+                    result[position].avatarUrl
                 )
             }
             binding.executePendingBindings()

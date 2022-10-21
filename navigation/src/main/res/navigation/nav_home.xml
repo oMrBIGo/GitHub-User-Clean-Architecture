@@ -9,6 +9,12 @@
         android:name="org.cn.github.home.HomeFragment">
 
         <action
+            android:id="@+id/action_homeFragment_to_nav_search"
+            app:destination="@id/nav_search"
+            app:popUpTo="@+id/nav_main"
+            app:popUpToInclusive="true"/>
+
+        <action
             android:id="@+id/action_homeFragment_to_nav_user_more"
             app:destination="@+id/nav_user_more"/>
 
@@ -20,7 +26,16 @@
                 android:name="login"
                 app:argType="string"/>
 
+            <argument
+                android:name="avatarUrl"
+                android:defaultValue=""
+                app:argType="string"/>
+
         </action>
+
+        <action
+            android:id="@+id/action_homeFragment_to_nav_search1"
+            app:destination="@+id/nav_search"/>
 
     </fragment>
 

@@ -37,8 +37,8 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
         adapter = UserListAdapter(
             data,
             object : UserListAdapter.OnItemClickListener {
-                override fun onItemClickListener(login: String) {
-                    viewModel.displayUserInfo(login)
+                override fun onItemClickListener(login: String, avatarUrl: String) {
+                    viewModel.displayUserInfo(login, avatarUrl)
                 }
             }
         )

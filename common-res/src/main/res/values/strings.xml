@@ -45,14 +45,19 @@
     <string name="user_title">All Users</string>
     <string name="repositories">Repositories</string>
     <string name="followers">Followers</string>
-    <string name="website">Website</string>
+    <string name="organization">Organization</string>
 
     <!--REPOSITORIES-->
     <string name="repositories_user">repositories by %s</string>
 
     <!--USER_INFO-->
     <string name="user_info_followers">%s followers</string>
-    <string name="user_info_following">%s following</string>
+    <string name="user_info_following">• %s following</string>
     <string name="user_info_pinned">Pinned</string>
     <string name="user_info_organizations">Organizations</string>
+
+    <!--SEARCH-->
+    <string name="search_title">Search</string>
+
+
 </resources>

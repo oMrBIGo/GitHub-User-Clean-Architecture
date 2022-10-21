@@ -1,6 +1,7 @@
 package org.cn.github.data.remote.di
 
 import org.cn.github.data.remote.home.HomeService
+import org.cn.github.data.remote.search.SearchService
 import org.cn.github.data.utils.NetworkResponseAdapterFactory
 import org.koin.core.qualifier.named
 import org.koin.dsl.module
@@ -18,4 +19,5 @@ fun createRemoteModule(baseApiUrl: String) = module {
     }
 
     single { get<Retrofit>(named("retrofit")).create(HomeService::class.java) }
+    single { get<Retrofit>(named("retrofit")).create(SearchService::class.java) }
 }

@@ -5,11 +5,9 @@ import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import org.cn.github.common.ui.base.BaseFragment
 import org.cn.github.domain.model.RepoList
-import org.cn.github.domain.model.UserList
 import org.cn.github.home.BR
 import org.cn.github.home.R
 import org.cn.github.home.adapter.RepositoriesListAdapter
-import org.cn.github.home.adapter.UserListAdapter
 import org.cn.github.home.databinding.FragmentRepositoriesBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

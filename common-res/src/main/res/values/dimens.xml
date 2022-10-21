@@ -65,6 +65,7 @@
     <dimen name="fontWeight100">100sp</dimen>
     <dimen name="fontWeight150">150sp</dimen>
     <dimen name="fontWeight200">200sp</dimen>
+    <dimen name="fontWeight250">250sp</dimen>
     <dimen name="fontWeight300">300sp</dimen>
     <dimen name="fontWeight400">400sp</dimen>
     <dimen name="fontWeight500">500sp</dimen>

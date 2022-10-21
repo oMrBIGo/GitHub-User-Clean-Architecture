@@ -64,10 +64,26 @@ class HomeViewModel(
         )
     }
 
-    fun displayUserInfo(login: String) {
+    fun displayUserInfo(login: String, avatarUrl: String) {
         navigate(
             NavigationCommand.To(
-                HomeFragmentDirections.actionHomeFragmentToNavUserinfo(login)
+                HomeFragmentDirections.actionHomeFragmentToNavUserinfo(login, avatarUrl)
+            )
+        )
+    }
+
+    fun displaySearch() {
+        navigate(
+            NavigationCommand.To(
+                HomeFragmentDirections.actionHomeFragmentToNavSearch1()
+            )
+        )
+    }
+
+    val displaySearch: () -> Unit = {
+        navigate(
+            NavigationCommand.To(
+                HomeFragmentDirections.actionHomeFragmentToNavSearch()
             )
         )
     }

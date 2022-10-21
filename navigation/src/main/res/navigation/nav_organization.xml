@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_organization"
+    app:startDestination="@id/organizationFragment">
+
+    <fragment
+        android:id="@+id/organizationFragment"
+        android:name="org.cn.github.home.organization.OrganizationFragment">
+
+        <argument
+            android:name="login"
+            app:argType="string"/>
+
+    </fragment>
+
+</navigation>

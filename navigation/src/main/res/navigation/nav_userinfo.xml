@@ -12,6 +12,11 @@
             android:name="login"
             app:argType="string"/>
 
+        <argument
+            android:name="avatarUrl"
+            android:defaultValue=""
+            app:argType="string"/>
+
         <action
             android:id="@+id/action_userinfoFragment_to_nav_repositories"
             app:destination="@+id/nav_repositories">
@@ -25,6 +30,16 @@
         <action
             android:id="@+id/action_userinfoFragment_to_nav_follow"
             app:destination="@+id/nav_follow">
+
+            <argument
+                android:name="login"
+                app:argType="string"/>
+
+        </action>
+
+        <action
+            android:id="@+id/action_userinfoFragment_to_nav_organization"
+            app:destination="@+id/nav_organization">
 
             <argument
                 android:name="login"

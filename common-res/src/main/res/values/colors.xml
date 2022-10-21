@@ -36,6 +36,8 @@
     <color name="color_icon_hint">#777782</color>
     <color name="button_home_color">#B9B9B9</color>B9B9B9
     <color name="button_home_color_stock">#343539</color>
+    <color name="card_background">#201f24</color>
+    <color name="card_stroke_background">#25262a</color>
 
     <color name="color_ffffff">#000000</color>
     <color name="color_41434f">#41434f</color>

@@ -12,6 +12,7 @@ object Modules {
     //const val commonTest = ":common-test"
     const val featureSplashscreen = ":features:splashscreen"
     const val featureHome = ":features:home"
+    const val featureSearch = ":features:search"
 }
 
 object Releases {

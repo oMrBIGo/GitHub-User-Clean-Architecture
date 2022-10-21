@@ -14,7 +14,7 @@ import org.cn.github.home.databinding.ItemRepositoriesBinding
 
 class RepositoriesListAdapter(
     private val context: Context,
-    private val result: ArrayList<RepoList>,
+    private val result: ArrayList<RepoList>
 ) : RecyclerView.Adapter<RepositoriesListAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

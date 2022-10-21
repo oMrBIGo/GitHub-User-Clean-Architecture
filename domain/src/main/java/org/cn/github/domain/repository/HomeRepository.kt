@@ -17,4 +17,8 @@ interface HomeRepository {
     suspend fun getUserInfo(
         login: String?
     ): NetworkResponse<UserInfo, CommonError>?
+
+    suspend fun getOrganizationList(
+        login: String?
+    ): NetworkResponse<ArrayList<OrganizationList>, CommonError>?
 }

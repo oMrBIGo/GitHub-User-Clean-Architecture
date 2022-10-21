@@ -16,6 +16,9 @@
                 android:name="login"
                 app:argType="string"/>
 
+            <argument
+                android:name="avatar"
+                app:argType="string"/>
         </action>
         
     </fragment>

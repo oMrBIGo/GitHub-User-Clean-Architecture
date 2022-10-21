@@ -18,7 +18,7 @@
             type="Function0&lt;Unit>" />
 
         <variable
-            name="exploreAction"
+            name="searchAction"
             type="Function0&lt;Unit>" />
 
         <variable
@@ -34,11 +34,11 @@
             type="Boolean" />
 
         <variable
-            name="isExploreAction"
+            name="isSearchSelected"
             type="Boolean" />
 
         <variable
-            name="isProfileAction"
+            name="isProfileSelected"
             type="Boolean" />
 
     </data>
@@ -157,7 +157,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/ripple_menu_light"
             android:clickable="true"
-            android:onClick="@{() -> exploreAction.invoke()}"
+            android:onClick="@{() -> searchAction.invoke()}"
             android:paddingBottom="@dimen/spacing_micro"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/guideline_75_view_bottom_menu"
@@ -173,7 +173,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_search"
-                android:tint="@{isExploreAction?@color/color_select:@color/color_no_select}"
+                android:tint="@{isSearchSelected?@color/color_select:@color/color_no_select}"
                 tools:ignore="UseAppTint" />
 
             <TextView
@@ -183,7 +183,7 @@
                 android:layout_marginTop="@dimen/spacing_micro"
                 android:fontFamily="@font/default_noto_sans_thai"
                 android:text="@string/menu_search"
-                android:textColor="@{isExploreAction?@color/color_select:@color/color_no_select}"
+                android:textColor="@{isSearchSelected?@color/color_select:@color/color_no_select}"
                 android:textSize="@dimen/font12"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -197,7 +197,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/ripple_menu_light"
             android:clickable="true"
-            android:onClick="@{() -> exploreAction.invoke()}"
+            android:onClick="@{() -> profileAction.invoke()}"
             android:paddingBottom="@dimen/spacing_micro"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -213,7 +213,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_profile"
-                android:tint="@{isProfileAction?@color/color_select:@color/color_no_select}"
+                android:tint="@{isProfileSelected?@color/color_select:@color/color_no_select}"
                 tools:ignore="UseAppTint" />
 
             <TextView
@@ -223,7 +223,7 @@
                 android:layout_marginTop="@dimen/spacing_micro"
                 android:fontFamily="@font/default_noto_sans_thai"
                 android:text="@string/menu_profile"
-                android:textColor="@{isProfileAction?@color/color_select:@color/color_no_select}"
+                android:textColor="@{isProfileSelected?@color/color_select:@color/color_no_select}"
                 android:textSize="@dimen/font12"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

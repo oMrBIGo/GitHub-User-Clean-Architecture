@@ -10,4 +10,5 @@ val modelModule = module {
     single { RepoListMapper() }
     single { FollowMapper() }
     single { UserInfoMapper() }
+    single { OrganizationMapper() }
 }

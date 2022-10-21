@@ -10,6 +10,7 @@ import org.cn.github.data.repository.di.repositoryModule
 import org.cn.github.domain.di.createBuildConfigModule
 import org.cn.github.domain.di.domainModule
 import org.cn.github.home.di.featureHome
+import org.cn.github.search.di.featureSearch
 import org.cn.github.splashscreen.di.featureSplashScreen
 
 fun createAppModule(interceptor: Interceptor) = listOf(
@@ -25,6 +26,7 @@ fun createAppModule(interceptor: Interceptor) = listOf(
     modelModule,
     localModule,
     featureHome,
-    featureSplashScreen
+    featureSplashScreen,
+    featureSearch
 )
 

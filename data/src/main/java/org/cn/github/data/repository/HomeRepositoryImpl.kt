@@ -1,9 +1,6 @@
 package org.cn.github.data.repository
 
-import org.cn.github.data.model.mapper.FollowMapper
-import org.cn.github.data.model.mapper.RepoListMapper
-import org.cn.github.data.model.mapper.UserInfoMapper
-import org.cn.github.data.model.mapper.UserListMapper
+import org.cn.github.data.model.mapper.*
 import org.cn.github.data.remote.home.HomeService
 import org.cn.github.domain.model.*
 import org.cn.github.domain.repository.HomeRepository
@@ -13,6 +10,7 @@ class HomeRepositoryImpl(
     private val repoListMapper: RepoListMapper,
     private val followMapper: FollowMapper,
     private val userInfoMapper: UserInfoMapper,
+    private val organizationMapper: OrganizationMapper,
     private val homeService: HomeService
 ) : HomeRepository {
 
@@ -36,5 +34,11 @@ class HomeRepositoryImpl(
         return homeService.getUserinfo(
             login
         ).mapOnSuccess(userInfoMapper::map)
+    }
+
+    override suspend fun getOrganizationList(login: String?): NetworkResponse<ArrayList<OrganizationList>, CommonError>? {
+        return homeService.getOrganization(
+            login
+        ).mapOnSuccess(organizationMapper::map)
     }
 }

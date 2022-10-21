@@ -11,4 +11,6 @@ class HomeUseCase(private val repo: HomeRepository) {
     suspend fun getFollowList(login: String?) = repo.getFollowList(login)
 
     suspend fun getUserInfo(login: String?) = repo.getUserInfo(login)
+
+    suspend fun getOrganizationList(login: String?) = repo.getOrganizationList(login)
 }

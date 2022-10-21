@@ -43,8 +43,8 @@ class UserMoreFragment() : BaseFragment<UserMoreViewModel, FragmentUserMoreBindi
         adapter = UserAllListAdapter(
             data,
             object : UserAllListAdapter.OnItemClickListener {
-                override fun onItemClickListener(login: String) {
-                    viewModel.displayUserInfo(login)
+                override fun onItemClickListener(login: String, avatar: String) {
+                    viewModel.displayUserInfo(login, avatar)
                 }
             },
         )

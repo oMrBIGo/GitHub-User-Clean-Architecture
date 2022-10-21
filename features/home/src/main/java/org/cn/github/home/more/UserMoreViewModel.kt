@@ -38,10 +38,10 @@ class UserMoreViewModel(
         }
     }
 
-    fun displayUserInfo(login: String) {
+    fun displayUserInfo(login: String, avatar: String) {
         navigate(
             NavigationCommand.To(
-                UserMoreFragmentDirections.actionUserMoreFragmentToNavUserinfo(login)
+                UserMoreFragmentDirections.actionUserMoreFragmentToNavUserinfo(login, avatar)
             )
         )
     }
