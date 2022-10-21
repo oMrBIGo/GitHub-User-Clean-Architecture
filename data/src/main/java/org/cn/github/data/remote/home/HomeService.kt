@@ -1,10 +1,8 @@
 package org.cn.github.data.remote.home
 
-import org.cn.github.data.model.OrganizationListEntity
-import org.cn.github.data.model.RepoListEntity
-import org.cn.github.data.model.UserInfoEntity
-import org.cn.github.data.model.UserListEntity
+import org.cn.github.data.model.*
 import org.cn.github.domain.model.CommonError
+import org.cn.github.domain.model.FollowersList
 import org.cn.github.domain.model.NetworkResponse
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -22,7 +20,7 @@ interface HomeService {
     @GET("users/{login}/followers")
     suspend fun getFollowList(
         @Path("login") login: String?
-    ): NetworkResponse<ArrayList<UserListEntity>, CommonError>
+    ): NetworkResponse<ArrayList<FollowersListEntity>, CommonError>
 
     @GET("users/{login}")
     suspend fun getUserinfo(

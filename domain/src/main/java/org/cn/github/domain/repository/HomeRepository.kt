@@ -12,7 +12,7 @@ interface HomeRepository {
 
     suspend fun getFollowList(
         login: String?
-    ): NetworkResponse<ArrayList<UserList>, CommonError>?
+    ): NetworkResponse<ArrayList<FollowersList>, CommonError>?
 
     suspend fun getUserInfo(
         login: String?

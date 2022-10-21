@@ -24,7 +24,7 @@ class HomeRepositoryImpl(
         ).mapOnSuccess(repoListMapper::map)
     }
 
-    override suspend fun getFollowList(login: String?): NetworkResponse<ArrayList<UserList>, CommonError>? {
+    override suspend fun getFollowList(login: String?): NetworkResponse<ArrayList<FollowersList>, CommonError>? {
         return homeService.getFollowList(
             login
         ).mapOnSuccess(followMapper::map)

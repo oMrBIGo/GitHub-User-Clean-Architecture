@@ -4,9 +4,11 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import org.cn.github.common.ui.base.BaseViewModel
+import org.cn.github.domain.model.FollowersList
 import org.cn.github.domain.model.NetworkResponse
 import org.cn.github.domain.model.UserList
 import org.cn.github.domain.usecase.HomeUseCase
+import org.cn.github.home.HomeFragmentDirections
 import org.cn.github.home.R
 
 class FollowViewModel(
@@ -14,7 +16,7 @@ class FollowViewModel(
 ) : BaseViewModel() {
 
     var login = MutableLiveData<String>()
-    var followListResult = MutableLiveData<ArrayList<UserList>>()
+    var followListResult = MutableLiveData<ArrayList<FollowersList>>()
 
     fun getFollowList() {
         progressDialogEvent.value = true
@@ -36,5 +38,13 @@ class FollowViewModel(
             }
             progressDialogEvent.value = false
         }
+    }
+
+    fun displayUserInfo(login: String, avatarUrl: String) {
+        navigate(
+            NavigationCommand.To(
+                FollowFragmentDirections.actionFollowFragmentToNavUserinfo(login, avatarUrl)
+            )
+        )
     }
 }

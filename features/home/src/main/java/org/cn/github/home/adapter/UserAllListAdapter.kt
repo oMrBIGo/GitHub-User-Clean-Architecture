@@ -50,8 +50,8 @@ class UserAllListAdapter(
             binding.model = result[position]
             binding.root.setOnClickListener {
                 onItemClickListener.onItemClickListener(
-                    result[position].login ?: "",
-                    result[position].avatarUrl ?: ""
+                    result[position].login,
+                    result[position].avatarUrl
                 )
             }
             binding.executePendingBindings()

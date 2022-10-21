@@ -4,6 +4,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import org.cn.github.common.ui.base.BaseFragment
+import org.cn.github.domain.model.FollowersList
 import org.cn.github.domain.model.UserList
 import org.cn.github.home.BR
 import org.cn.github.home.R
@@ -44,10 +45,15 @@ class FollowFragment : BaseFragment<FollowViewModel, FragmentFollowBinding>() {
         }
     }
 
-    private fun setFollowAdapter(data: ArrayList<UserList>) {
+    private fun setFollowAdapter(data: ArrayList<FollowersList>) {
         adapter = FollowListAdapter(
             requireContext(),
-            data
+            data,
+            object : FollowListAdapter.OnItemFollowersClickListener {
+                override fun onItemClickListener(login: String, avatarUrl: String) {
+                    viewModel.displayUserInfo(login, avatarUrl)
+                }
+            }
         )
         val lm = LinearLayoutManager(requireContext())
         binding.rcvFollow.layoutManager = lm
