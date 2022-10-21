@@ -13,7 +13,6 @@ class RepoListMapper : Mapper<ArrayList<RepoListEntity>, ArrayList<RepoList>> {
 
     private fun getRepoList(results: ArrayList<RepoListEntity>): ArrayList<RepoList> {
         val list = ArrayList<RepoList>()
-        list.add(RepoList())
         results.map { data ->
             list.add(
                 RepoList(

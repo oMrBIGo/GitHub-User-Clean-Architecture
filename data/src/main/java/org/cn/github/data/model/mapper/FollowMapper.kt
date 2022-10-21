@@ -13,7 +13,6 @@ class FollowMapper : Mapper<ArrayList<UserListEntity>, ArrayList<UserList>> {
 
     private fun getFollowList(result: ArrayList<UserListEntity>): ArrayList<UserList> {
         val list = ArrayList<UserList>()
-        list.add(UserList())
         result.map { data ->
             list.add(
                 UserList(

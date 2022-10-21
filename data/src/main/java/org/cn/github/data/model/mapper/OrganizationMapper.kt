@@ -13,7 +13,6 @@ class OrganizationMapper : Mapper<ArrayList<OrganizationListEntity>, ArrayList<O
 
     private fun getOrganizationList(results: ArrayList<OrganizationListEntity>): ArrayList<OrganizationList> {
         val list = ArrayList<OrganizationList>()
-        list.add(OrganizationList())
         results.map { data ->
             list.add(
                 OrganizationList(

@@ -13,7 +13,6 @@ class UserListMapper : Mapper<ArrayList<UserListEntity>, ArrayList<UserList>> {
 
     private fun getUserList(results: ArrayList<UserListEntity>): ArrayList<UserList> {
         val list = ArrayList<UserList>()
-        list.add(UserList())
         results.map { data ->
             list.add(
                 UserList(
