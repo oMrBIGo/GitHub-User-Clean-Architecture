@@ -20,6 +20,21 @@
             app:popUpTo="@+id/nav_main"
             app:popUpToInclusive="true"/>
 
+        <action
+            android:id="@+id/action_searchFragment_to_nav_userinfo"
+            app:destination="@+id/nav_userinfo">
+
+            <argument
+                android:name="login"
+                app:argType="string"/>
+
+            <argument
+                android:name="avatarUrl"
+                android:defaultValue=""
+                app:argType="string"/>
+
+        </action>
+
     </fragment>
 
 </navigation>

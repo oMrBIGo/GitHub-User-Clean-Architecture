@@ -39,10 +39,23 @@
                     android:ellipsize="end"
                     android:gravity="center"
                     android:singleLine="true"
+                    android:layout_marginEnd="@dimen/spacing10"
                     android:text="@string/search_title"
                     android:textColor="@color/text_color"
                     android:textSize="@dimen/font18"
                     android:textStyle="bold" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/username"
+                    android:drawableTint="@color/colorPrimary"
+                    android:drawableStart="@drawable/ic_search"
+                    android:drawablePadding="@dimen/spacing10"
+                    android:layout_marginEnd="@dimen/spacing_medium"
+                    android:hint="@string/search_filter"
+                    android:text="@={viewModel.keyword}"
+                    android:onTextChanged="@{viewModel.onTextChanged}" />
 
             </com.google.android.material.appbar.MaterialToolbar>
 
@@ -50,11 +63,38 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/menu_search"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/appbar_search">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcv_user_search"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                isVisible="@{viewModel.isSearch}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                isVisible="@{viewModel.isEmptyItem()}"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_large"
+                android:layout_marginTop="@dimen/spacing20"
+                android:layout_marginEnd="@dimen/spacing_large"
+                android:gravity="center"
+                android:text="@string/search_no_data"
+                android:textColor="@color/color_ffffff"
+                android:textSize="@dimen/font18"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

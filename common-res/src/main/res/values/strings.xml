@@ -58,8 +58,9 @@
 
     <!--SEARCH-->
     <string name="search_title">Search</string>
+    <string name="search_filter">enter a search term...</string>
 
     <!--SETTING-->
     <string name="setting_title">Setting</string>
-
+    <string name="search_no_data">search not found</string>
 </resources>

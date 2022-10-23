@@ -87,4 +87,11 @@
         <item name="android:textStyle">bold</item>
     </style>
 
+    <style name="AppSearchView" parent="Widget.AppCompat.SearchView" >
+        <item name="android:textSize">@dimen/font16</item>
+        <item name="android:textColorPrimary">@color/text_color</item>
+        <item name="android:textColorHint">@color/text_hint_input</item>
+        <item name="android:tint">@color/colorPrimary</item>
+    </style>
+
 </resources>
