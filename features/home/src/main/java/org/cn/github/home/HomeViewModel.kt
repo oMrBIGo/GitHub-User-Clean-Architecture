@@ -87,4 +87,12 @@ class HomeViewModel(
             )
         )
     }
+
+    val displaySetting: () -> Unit = {
+        navigate(
+            NavigationCommand.To(
+                HomeFragmentDirections.actionHomeFragmentToNavSetting()
+            )
+        )
+    }
 }

@@ -12,6 +12,7 @@ import org.cn.github.domain.di.domainModule
 import org.cn.github.home.di.featureHome
 import org.cn.github.search.di.featureSearch
 import org.cn.github.splashscreen.di.featureSplashScreen
+import org.cn.github.setting.di.featureSetting
 
 fun createAppModule(interceptor: Interceptor) = listOf(
     createHttpClient(interceptor),
@@ -27,6 +28,7 @@ fun createAppModule(interceptor: Interceptor) = listOf(
     localModule,
     featureHome,
     featureSplashScreen,
-    featureSearch
+    featureSearch,
+    featureSetting
 )
 

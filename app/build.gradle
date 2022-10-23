@@ -57,6 +57,7 @@ dependencies {
     implementation project(Modules.featureSplashscreen)
     implementation project(Modules.featureHome)
     implementation project(Modules.featureSearch)
+    implementation project(Modules.featureSetting)
     implementation Deps.material
     implementation Deps.koin
     implementation Deps.koinViewModel

@@ -19,7 +19,7 @@ class SearchFragment : BaseFragment<SearchViewModel, FragmentSearchBinding>() {
     }
 
     override fun initViewModel() {
-
+        viewModel.getUsersList()
     }
 
 }

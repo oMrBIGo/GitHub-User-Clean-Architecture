@@ -11,5 +11,5 @@ import org.koin.dsl.module
 val repositoryModule = module {
     single<SecurePreferenceRepository> { SecurePreferenceRepositoryImpl(get()) }
     single<HomeRepository> { HomeRepositoryImpl(get(), get(), get(), get(), get(), get()) }
-    single<SearchRepository> { SearchRepositoryImpl(get()) }
+    single<SearchRepository> { SearchRepositoryImpl(get(), get()) }
 }

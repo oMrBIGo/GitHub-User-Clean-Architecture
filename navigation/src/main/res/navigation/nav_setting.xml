@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_search"
-    app:startDestination="@id/searchFragment">
+    android:id="@+id/nav_setting"
+    app:startDestination="@id/settingFragment">
 
     <fragment
-        android:id="@+id/searchFragment"
-        android:name="org.cn.github.search.SearchFragment">
+        android:id="@+id/settingFragment"
+        android:name="org.cn.github.setting.SettingFragment">
 
         <action
-            android:id="@+id/action_searchFragment_to_nav_home"
+            android:id="@+id/action_settingFragment_to_nav_home"
             app:destination="@id/nav_home"
             app:popUpTo="@+id/nav_main"
             app:popUpToInclusive="true"/>
 
         <action
-            android:id="@+id/action_searchFragment_to_nav_setting"
-            app:destination="@id/nav_setting"
+            android:id="@+id/action_settingFragment_to_nav_search"
+            app:destination="@id/nav_search"
             app:popUpTo="@+id/nav_main"
             app:popUpToInclusive="true"/>
 

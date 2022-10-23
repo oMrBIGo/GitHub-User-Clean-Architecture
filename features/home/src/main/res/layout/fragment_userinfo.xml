@@ -319,7 +319,7 @@
                                 isVisible='@{viewModel.userInfoResult.followers != 0}'
                                 android:layout_width="@dimen/spacing_medium"
                                 android:layout_height="@dimen/spacing_medium"
-                                android:src="@drawable/ic_profile"
+                                android:src="@drawable/ic_user"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent"
                                 app:tint="@color/color_icon_hint" />

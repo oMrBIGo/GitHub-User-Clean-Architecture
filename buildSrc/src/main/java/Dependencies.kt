@@ -13,6 +13,7 @@ object Modules {
     const val featureSplashscreen = ":features:splashscreen"
     const val featureHome = ":features:home"
     const val featureSearch = ":features:search"
+    const val featureSetting = ":features:setting"
 }
 
 object Releases {

@@ -22,7 +22,7 @@
             type="Function0&lt;Unit>" />
 
         <variable
-            name="profileAction"
+            name="settingAction"
             type="Function0&lt;Unit>" />
 
         <variable
@@ -38,7 +38,7 @@
             type="Boolean" />
 
         <variable
-            name="isProfileSelected"
+            name="isSettingSelected"
             type="Boolean" />
 
     </data>
@@ -69,7 +69,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.75" />
-
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cly_home_view_bottom_menu"
@@ -192,12 +191,12 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cly_profile_view_bottom_menu"
+            android:id="@+id/cly_setting_view_bottom_menu"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@drawable/ripple_menu_light"
             android:clickable="true"
-            android:onClick="@{() -> profileAction.invoke()}"
+            android:onClick="@{() -> settingAction.invoke()}"
             android:paddingBottom="@dimen/spacing_micro"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -205,15 +204,15 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:id="@+id/imv_profile_view_buttom_menu"
+                android:id="@+id/imv_setting_view_buttom_menu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/spacing10"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_profile"
-                android:tint="@{isProfileSelected?@color/color_select:@color/color_no_select}"
+                app:srcCompat="@drawable/ic_setting"
+                android:tint="@{isSettingSelected?@color/color_select:@color/color_no_select}"
                 tools:ignore="UseAppTint" />
 
             <TextView
@@ -222,12 +221,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/spacing_micro"
                 android:fontFamily="@font/default_noto_sans_thai"
-                android:text="@string/menu_profile"
-                android:textColor="@{isProfileSelected?@color/color_select:@color/color_no_select}"
+                android:text="@string/menu_setting"
+                android:textColor="@{isSettingSelected?@color/color_select:@color/color_no_select}"
                 android:textSize="@dimen/font12"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imv_profile_view_buttom_menu" />
+                app:layout_constraintTop_toBottomOf="@+id/imv_setting_view_buttom_menu" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

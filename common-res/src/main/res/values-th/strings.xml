@@ -31,7 +31,7 @@
     <string name="menu_home">หน้าหลัก</string>
     <string name="menu_notifications">การแจ้งเตือน</string>
     <string name="menu_search">ค้นหา</string>
-    <string name="menu_profile">โปรไฟล์</string>
+    <string name="menu_setting">ตั้งค่า</string>
 
     <!--HOME-->
     <string name="home_title">หน้าหลัก</string>
@@ -57,5 +57,8 @@
 
     <!--SEARCH-->
     <string name="search_title">ค้นหา</string>
+
+    <!--SETTING-->
+    <string name="setting_title">ตั้งค่า</string>
 
 </resources>
