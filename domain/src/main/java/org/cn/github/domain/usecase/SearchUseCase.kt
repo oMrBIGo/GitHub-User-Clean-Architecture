@@ -4,5 +4,7 @@ import org.cn.github.domain.repository.SearchRepository
 
 class SearchUseCase(private val repo: SearchRepository) {
 
-    suspend fun getUserList() = repo.getUserList()
+    suspend fun getSearchUser(
+        q: String?
+    ) = repo.getSearchUser(q)
 }

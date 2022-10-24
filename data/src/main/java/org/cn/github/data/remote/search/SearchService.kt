@@ -1,12 +1,15 @@
 package org.cn.github.data.remote.search
 
-import org.cn.github.data.model.UserListEntity
+import org.cn.github.data.model.SearchUserListEntity
 import org.cn.github.domain.model.CommonError
 import org.cn.github.domain.model.NetworkResponse
 import retrofit2.http.GET
+import retrofit2.http.Query
 
 interface SearchService {
 
-    @GET("users")
-    suspend fun getUserList(): NetworkResponse<ArrayList<UserListEntity>, CommonError>
+    @GET("search/users?")
+    suspend fun getSearchUser(
+        @Query("q") q : String?
+    ) : NetworkResponse<SearchUserListEntity, CommonError>
 }

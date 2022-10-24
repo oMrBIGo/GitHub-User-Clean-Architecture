@@ -1,9 +1,8 @@
 package org.cn.github.search
 
-import android.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
 import org.cn.github.common.ui.base.BaseFragment
-import org.cn.github.domain.model.UserList
+import org.cn.github.domain.model.SearchUserList
 import org.cn.github.search.adapter.SearchListAdapter
 import org.cn.github.search.databinding.FragmentSearchBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -18,6 +17,7 @@ class SearchFragment : BaseFragment<SearchViewModel, FragmentSearchBinding>() {
 
     override fun initView() {
         initToolbar()
+        onBackPress()
     }
 
     private fun initToolbar() {
@@ -25,22 +25,22 @@ class SearchFragment : BaseFragment<SearchViewModel, FragmentSearchBinding>() {
     }
 
     override fun initViewModel() {
-        viewModel.getUsersList()
-        viewModel.userListResult.observe(
+        viewModel.searchListResult.observe(
             this
         ) {
-            setSearchListAdapter(it)
+            setSearchListAdapter(it,viewModel.keyword.value!!)
         }
     }
 
-    private fun setSearchListAdapter(data: ArrayList<UserList>) {
+    private fun setSearchListAdapter(data: ArrayList<SearchUserList.Item>, searchText: String) {
         adapter = SearchListAdapter(
             data,
             object : SearchListAdapter.OnItemClickListener {
                 override fun onItemClickListener(login: String, avatarUrl: String) {
                     viewModel.displayUserInfo(login, avatarUrl)
                 }
-            }
+            },
+            searchText
         )
         val lm = LinearLayoutManager(requireContext())
         binding.rcvUserSearch.layoutManager = lm

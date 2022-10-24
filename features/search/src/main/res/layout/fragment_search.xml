@@ -36,26 +36,50 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start"
+                    android:layout_marginEnd="@dimen/spacing10"
                     android:ellipsize="end"
                     android:gravity="center"
                     android:singleLine="true"
-                    android:layout_marginEnd="@dimen/spacing10"
                     android:text="@string/search_title"
                     android:textColor="@color/text_color"
                     android:textSize="@dimen/font18"
                     android:textStyle="bold" />
 
-                <EditText
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/username"
-                    android:drawableTint="@color/colorPrimary"
-                    android:drawableStart="@drawable/ic_search"
-                    android:drawablePadding="@dimen/spacing10"
-                    android:layout_marginEnd="@dimen/spacing_medium"
-                    android:hint="@string/search_filter"
-                    android:text="@={viewModel.keyword}"
-                    android:onTextChanged="@{viewModel.onTextChanged}" />
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/edt_search_search"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/spacing_medium"
+                        android:drawableStart="@drawable/ic_search"
+                        android:drawablePadding="@dimen/spacing5"
+                        android:drawableTint="@color/colorPrimary"
+                        android:hint="@string/search_filter"
+                        android:onTextChanged="@{viewModel.onTextChanged}"
+                        android:text="@={viewModel.keyword}"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageView
+                        android:id="@+id/imv_icon_information_profile"
+                        isVisible="@{viewModel.isSearch}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="@{() -> viewModel.getSearchList(viewModel.keyword)}"
+                        android:padding="@dimen/spacing5"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/edt_search_search"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:srcCompat="@drawable/ic_send"
+                        app:tint="@color/colorPrimary" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
 
             </com.google.android.material.appbar.MaterialToolbar>
 
@@ -71,9 +95,9 @@
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rcv_user_search"
+                isVisible="@{!viewModel.keyword.empty}"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                isVisible="@{viewModel.isSearch}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -103,12 +127,12 @@
             layout="@layout/view_bottom_menu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:homeAction="@{viewModel.displayHome}"
             app:isSearchSelected="@{true}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:homeAction="@{viewModel.displayHome}"
-            app:settingAction="@{viewModel.displaySetting}"/>
+            app:settingAction="@{viewModel.displaySetting}" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

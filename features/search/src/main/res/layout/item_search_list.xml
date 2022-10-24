@@ -6,7 +6,7 @@
 
         <variable
             name="model"
-            type="org.cn.github.domain.model.UserList" />
+            type="org.cn.github.domain.model.SearchUserList.Item" />
 
     </data>
 

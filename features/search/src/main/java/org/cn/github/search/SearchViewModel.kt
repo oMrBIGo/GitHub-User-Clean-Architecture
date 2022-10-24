@@ -1,45 +1,37 @@
 package org.cn.github.search
 
-import android.os.CountDownTimer
+import NavigationCommand
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import org.cn.github.common.ui.base.BaseViewModel
 import org.cn.github.common.ui.util.SingleLiveEvent
 import org.cn.github.domain.model.NetworkResponse
-import org.cn.github.domain.model.UserList
+import org.cn.github.domain.model.SearchUserList
 import org.cn.github.domain.usecase.SearchUseCase
-import org.cn.github.home.HomeFragmentDirections
 
 class SearchViewModel(
     private val searchUseCase: SearchUseCase,
 ) : BaseViewModel() {
 
-    var userListResult = MutableLiveData<ArrayList<UserList>>()
+    var searchListResult = MutableLiveData<ArrayList<SearchUserList.Item>>()
     var isSearch = MutableLiveData<Boolean>(false)
     var keyword = SingleLiveEvent<String>()
-    val filter = MutableLiveData<String>()
     val isEmptyItem = MutableLiveData<Boolean>()
 
     fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
         isSearch.value = s.isNotBlank()
-        val timer = object : CountDownTimer(50, 50) {
-            override fun onTick(millisUntilFinished: Long) {}
-            override fun onFinish() {
-                if (s.isNotBlank() && keyword.value != s.toString()) {
-                    keyword.value = s.toString()
-                }
-            }
+        if (s.isNotBlank() && keyword.value != s.toString()) {
+            keyword.value = s.toString()
         }
-        timer.start()
     }
 
-    fun getUsersList() {
+    fun getSearchList(keyword: String?) {
         progressDialogEvent.value = true
         viewModelScope.launch {
-            when (val result = searchUseCase.getUserList()) {
+            when (val result = searchUseCase.getSearchUser(keyword)) {
                 is NetworkResponse.Success -> {
-                    userListResult.value = result.body
+                    searchListResult.value = result.body
                     updateItem()
                 }
                 is NetworkResponse.ApiError -> {
@@ -58,7 +50,7 @@ class SearchViewModel(
     }
 
     private fun updateItem() {
-        isEmptyItem.value = userListResult.value?.isNullOrEmpty()
+        isEmptyItem.value = searchListResult.value?.isNullOrEmpty()
     }
 
     val displayHome: () -> Unit = {
