@@ -8,15 +8,14 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import org.cn.github.common.ui.base.BaseViewModel
-import org.cn.github.domain.model.NetworkResponse
-import org.cn.github.domain.model.OrganizationList
-import org.cn.github.domain.model.RepoList
-import org.cn.github.domain.model.UserInfo
+import org.cn.github.domain.model.*
 import org.cn.github.domain.usecase.HomeUseCase
+import org.cn.github.domain.usecase.SecurePreferencesUseCase
 import org.cn.github.home.R
 
 class UserInfoViewModel(
     private val homeUseCase: HomeUseCase,
+    private val securePreferencesUseCase: SecurePreferencesUseCase
 ) : BaseViewModel() {
 
     val login = MutableLiveData<String>()
@@ -88,6 +87,10 @@ class UserInfoViewModel(
             }
             progressDialogEvent.value = false
         }
+    }
+
+    fun setFavoriteUser() {
+        securePreferencesUseCase.getArrayStringSharedPreference("")
     }
 
     fun displayRepositories(login: String) {

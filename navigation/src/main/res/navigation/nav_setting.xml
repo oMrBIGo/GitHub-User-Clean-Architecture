@@ -15,6 +15,12 @@
             app:popUpToInclusive="true"/>
 
         <action
+            android:id="@+id/action_settingFragment_to_nav_favorite"
+            app:destination="@id/nav_favorite"
+            app:popUpTo="@navigation/nav_main"
+            app:popUpToInclusive="true"/>
+
+        <action
             android:id="@+id/action_settingFragment_to_nav_search"
             app:destination="@id/nav_search"
             app:popUpTo="@+id/nav_main"

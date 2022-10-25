@@ -9,6 +9,7 @@ import org.cn.github.data.remote.di.createRemoteModule
 import org.cn.github.data.repository.di.repositoryModule
 import org.cn.github.domain.di.createBuildConfigModule
 import org.cn.github.domain.di.domainModule
+import org.cn.github.favorite.di.featureFavorite
 import org.cn.github.home.di.featureHome
 import org.cn.github.search.di.featureSearch
 import org.cn.github.splashscreen.di.featureSplashScreen
@@ -29,6 +30,7 @@ fun createAppModule(interceptor: Interceptor) = listOf(
     featureHome,
     featureSplashScreen,
     featureSearch,
-    featureSetting
+    featureSetting,
+    featureFavorite
 )
 

@@ -12,6 +12,7 @@ class SettingFragment : BaseFragment<SettingViewModel, FragmentSettingBinding>()
 
     override fun initView() {
         initToolbar()
+        onBackPress()
     }
 
     private fun initToolbar() {
@@ -19,6 +20,7 @@ class SettingFragment : BaseFragment<SettingViewModel, FragmentSettingBinding>()
     }
 
     override fun initViewModel() {
+
     }
 
 }

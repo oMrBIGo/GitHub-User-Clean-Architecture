@@ -18,6 +18,14 @@ class SettingViewModel: BaseViewModel() {
         )
     }
 
+    val displayFavorite: () -> Unit = {
+        navigate(
+            NavigationCommand.To(
+                SettingFragmentDirections.actionSettingFragmentToNavFavorite()
+            )
+        )
+    }
+
     val displaySearch: ()-> Unit = {
         navigate(
             NavigationCommand.To(

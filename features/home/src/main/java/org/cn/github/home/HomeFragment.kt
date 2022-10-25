@@ -18,6 +18,7 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
 
     override fun initView() {
         initToolbar()
+        onBackPress()
     }
 
     private fun initToolbar() {

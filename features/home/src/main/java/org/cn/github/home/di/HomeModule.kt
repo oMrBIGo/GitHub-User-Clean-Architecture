@@ -14,6 +14,6 @@ val featureHome = module {
     viewModel { UserMoreViewModel(get()) }
     viewModel { RepositoriesViewModel(get()) }
     viewModel { FollowViewModel(get()) }
-    viewModel { UserInfoViewModel(get()) }
+    viewModel { UserInfoViewModel(get(), get()) }
     viewModel { OrganizationViewModel(get()) }
 }

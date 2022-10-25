@@ -14,6 +14,7 @@ object Modules {
     const val featureHome = ":features:home"
     const val featureSearch = ":features:search"
     const val featureSetting = ":features:setting"
+    const val featureFavorite = ":features:favorite"
 }
 
 object Releases {

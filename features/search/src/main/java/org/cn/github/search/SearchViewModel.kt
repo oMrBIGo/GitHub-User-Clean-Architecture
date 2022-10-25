@@ -61,6 +61,14 @@ class SearchViewModel(
         )
     }
 
+    val displayFavorite: () -> Unit = {
+        navigate(
+            NavigationCommand.To(
+                SearchFragmentDirections.actionSearchFragmentToNavFavorite()
+            )
+        )
+    }
+
     val displaySetting: () -> Unit = {
         navigate(
             NavigationCommand.To(

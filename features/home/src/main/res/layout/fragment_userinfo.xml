@@ -47,6 +47,19 @@
                     android:tint="@color/color_icon"
                     tools:ignore="ContentDescription" />
 
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/imv_favorite"
+                    android:layout_width="@dimen/spacing30"
+                    android:layout_height="@dimen/spacing30"
+                    android:layout_gravity="end"
+                    android:layout_marginEnd="@dimen/spacing18"
+                    android:background="@android:color/transparent"
+                    android:onClick="@{() -> viewModel.setFavoriteUser()}"
+                    android:padding="@dimen/spacing10"
+                    android:src="@drawable/ic_favorite"
+                    android:tint="@color/color_icon_hint"
+                    tools:ignore="ContentDescription" />
+
             </com.google.android.material.appbar.MaterialToolbar>
 
         </com.google.android.material.appbar.AppBarLayout>

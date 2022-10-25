@@ -14,7 +14,7 @@
             type="Function0&lt;Unit>" />
 
         <variable
-            name="notificationsAction"
+            name="favoriteAction"
             type="Function0&lt;Unit>" />
 
         <variable
@@ -30,7 +30,7 @@
             type="Boolean" />
 
         <variable
-            name="isNotificationsSelected"
+            name="isFavoriteSelected"
             type="Boolean" />
 
         <variable
@@ -111,12 +111,12 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cly_notifications_view_bottom_menu"
+            android:id="@+id/cly_favorite_view_bottom_menu"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@drawable/ripple_menu_light"
             android:clickable="true"
-            android:onClick="@{() -> notificationsAction.invoke()}"
+            android:onClick="@{() -> favoriteAction.invoke()}"
             android:paddingBottom="@dimen/spacing_micro"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/guideline_50_view_bottom_menu"
@@ -124,29 +124,29 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:id="@+id/imv_notifications_view_buttom_menu"
+                android:id="@+id/imv_favorite_view_buttom_menu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/spacing10"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_notifications"
-                android:tint="@{isNotificationsSelected?@color/color_select:@color/color_no_select}"
+                app:srcCompat="@drawable/ic_favorite"
+                android:tint="@{isFavoriteSelected?@color/color_select:@color/color_no_select}"
                 tools:ignore="UseAppTint" />
 
             <TextView
-                android:id="@+id/txv_notifications_view_buttom_menu"
+                android:id="@+id/txv_favorite_view_buttom_menu"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/spacing_micro"
                 android:fontFamily="@font/default_noto_sans_thai"
-                android:text="@string/menu_notifications"
-                android:textColor="@{isNotificationsSelected?@color/color_select:@color/color_no_select}"
+                android:text="@string/menu_favorite"
+                android:textColor="@{isFavoriteSelected?@color/color_select:@color/color_no_select}"
                 android:textSize="@dimen/font12"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imv_notifications_view_buttom_menu" />
+                app:layout_constraintTop_toBottomOf="@+id/imv_favorite_view_buttom_menu" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
