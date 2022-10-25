@@ -17,12 +17,7 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
     private var adapter: UserListAdapter? = null
 
     override fun initView() {
-        initToolbar()
         onBackPress()
-    }
-
-    private fun initToolbar() {
-        viewModel.initToolbar(titleRes = R.string.home_title)
     }
 
     override fun initViewModel() {

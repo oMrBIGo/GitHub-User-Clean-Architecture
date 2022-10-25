@@ -16,12 +16,7 @@ class SearchFragment : BaseFragment<SearchViewModel, FragmentSearchBinding>() {
     private var adapter: SearchListAdapter? = null
 
     override fun initView() {
-        initToolbar()
         onBackPress()
-    }
-
-    private fun initToolbar() {
-        viewModel.initToolbar(titleRes = R.string.search_title)
     }
 
     override fun initViewModel() {

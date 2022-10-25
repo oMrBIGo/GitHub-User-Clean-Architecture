@@ -11,12 +11,7 @@ class SettingFragment : BaseFragment<SettingViewModel, FragmentSettingBinding>()
     override fun getViewModelBindingVariable(): Int = BR.viewModel
 
     override fun initView() {
-        initToolbar()
         onBackPress()
-    }
-
-    private fun initToolbar() {
-        viewModel.initToolbar(titleRes = R.string.setting_title)
     }
 
     override fun initViewModel() {
