@@ -52,6 +52,4 @@ class UserMoreFragment() : BaseFragment<UserMoreViewModel, FragmentUserMoreBindi
         binding.rcvUserMore.layoutManager = lm
         binding.rcvUserMore.adapter = adapter
     }
-
-
 }

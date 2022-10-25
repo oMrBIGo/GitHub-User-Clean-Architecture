@@ -13,6 +13,7 @@ class SecurePreferenceRepositoryImpl(private val prefs: SecurePreferences) :
         const val email = "82244417f956ac7c599f191593f7e441a4fafa20a4158fd52e154f1dc4c8ed92"
         const val password = "5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8"
         const val username = "16f78a7d6317f102bbd95fc9a4f3ff2e3249287690b8bdad6b7810f82b34ace3"
+        const val favorite = "535aadbabe464c15411cdce8c23417f956ac7c599f191593f7f812c66eee3"
     }
 
     override fun commitIntSharedPreference(prefKey: String, value: Int) {
@@ -87,4 +88,7 @@ class SecurePreferenceRepositoryImpl(private val prefs: SecurePreferences) :
         return username
     }
 
+    override fun getKeyFavorite(): String {
+        return favorite
+    }
 }

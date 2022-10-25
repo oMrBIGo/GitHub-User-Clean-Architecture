@@ -23,7 +23,7 @@ class SearchFragment : BaseFragment<SearchViewModel, FragmentSearchBinding>() {
         viewModel.searchListResult.observe(
             this
         ) {
-            setSearchListAdapter(it,viewModel.keyword.value!!)
+            setSearchListAdapter(it, viewModel.keyword.value!!)
         }
     }
 

@@ -5,7 +5,6 @@ import org.cn.github.common.ui.base.BaseFragment
 import org.cn.github.domain.model.UserList
 import org.cn.github.home.adapter.UserListAdapter
 import org.cn.github.home.databinding.FragmentHomeBinding
-import org.cn.github.domain.constant.Language
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {

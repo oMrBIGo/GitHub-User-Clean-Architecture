@@ -8,7 +8,6 @@ import org.cn.github.domain.model.RepoList
 import org.cn.github.home.BR
 import org.cn.github.home.R
 import org.cn.github.home.adapter.PinnedRepoListAdapter
-import org.cn.github.home.adapter.RepositoriesListAdapter
 import org.cn.github.home.databinding.FragmentUserinfoBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 

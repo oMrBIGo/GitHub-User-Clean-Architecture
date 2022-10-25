@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -12,10 +12,10 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/spacing15"
+        android:background="@color/background"
         android:paddingStart="@dimen/spacing_medium"
-        android:paddingEnd="@dimen/spacing_medium"
-        android:background="@color/background">
+        android:paddingTop="@dimen/spacing15"
+        android:paddingEnd="@dimen/spacing_medium">
 
         <TextView
             android:id="@+id/txv_title_repositories"
@@ -36,31 +36,31 @@
             android:text='@{!model.description.empty ? model.description : "-"}'
             android:textColor="@color/text_hint_input"
             android:textSize="@dimen/font14"
-            app:layout_constraintTop_toBottomOf="@+id/txv_title_repositories"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txv_title_repositories" />
 
         <ImageView
             android:id="@+id/imv_star_repositories"
             android:layout_width="@dimen/spacing20"
             android:layout_height="@dimen/spacing20"
             android:layout_marginTop="@dimen/spacing5"
-            android:src="@drawable/ic_star"
-            app:tint="@color/yellow"
-            android:paddingEnd="@dimen/spacing1"
             android:paddingStart="@dimen/spacing1"
+            android:paddingEnd="@dimen/spacing1"
             android:paddingBottom="@dimen/spacing1"
+            android:src="@drawable/ic_star"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txv_des_repositories"
-            app:layout_constraintStart_toStartOf="parent"/>
+            app:tint="@color/yellow" />
 
         <TextView
             android:id="@+id/txv_star_repositories"
+            textNumberInt="@{model.stargazers_count}"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            textNumberInt="@{model.stargazers_count}"
+            android:layout_marginStart="@dimen/spacing3"
             android:textColor="@color/text_hint_input"
             android:textSize="@dimen/font14"
-            android:layout_marginStart="@dimen/spacing3"
             app:layout_constraintBottom_toBottomOf="@+id/imv_star_repositories"
             app:layout_constraintStart_toEndOf="@+id/imv_star_repositories"
             app:layout_constraintTop_toTopOf="@+id/imv_star_repositories" />
@@ -69,22 +69,22 @@
             android:id="@+id/imv_circle_repositories"
             android:layout_width="@dimen/spacing20"
             android:layout_height="@dimen/spacing20"
-            android:src="@drawable/ic_circle"
-            android:padding="@dimen/spacing4"
-            app:tint="#2196F3"
             android:layout_marginStart="@dimen/spacing5"
+            android:padding="@dimen/spacing4"
+            android:src="@drawable/ic_circle"
             app:layout_constraintBottom_toBottomOf="@+id/txv_star_repositories"
             app:layout_constraintStart_toEndOf="@+id/txv_star_repositories"
-            app:layout_constraintTop_toTopOf="@+id/txv_star_repositories" />
+            app:layout_constraintTop_toTopOf="@+id/txv_star_repositories"
+            app:tint="#2196F3" />
 
         <TextView
             android:id="@+id/txv_circle_repositories"
-            android:text='@{!model.language.empty ? model.language : "-"}'
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing3"
+            android:text='@{!model.language.empty ? model.language : "-"}'
             android:textColor="@color/text_hint_input"
             android:textSize="@dimen/font14"
-            android:layout_marginStart="@dimen/spacing3"
             app:layout_constraintBottom_toBottomOf="@+id/imv_circle_repositories"
             app:layout_constraintStart_toEndOf="@+id/imv_circle_repositories"
             app:layout_constraintTop_toTopOf="@+id/imv_circle_repositories" />

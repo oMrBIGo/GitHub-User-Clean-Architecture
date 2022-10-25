@@ -43,5 +43,4 @@ class OrganizationListAdapter(
             binding.executePendingBindings()
         }
     }
-
 }

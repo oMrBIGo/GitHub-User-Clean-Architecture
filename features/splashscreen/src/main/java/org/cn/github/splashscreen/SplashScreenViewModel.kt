@@ -1,5 +1,6 @@
 package org.cn.github.splashscreen
 
+import NavigationCommand
 import org.cn.github.common.ui.base.BaseViewModel
 import org.cn.github.domain.constant.Language
 import org.cn.github.domain.constant.ThemeType

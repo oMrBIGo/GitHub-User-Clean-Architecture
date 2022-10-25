@@ -52,6 +52,4 @@ class OrganizationFragment: BaseFragment<OrganizationViewModel,FragmentOrganizat
         binding.rcvOrganization.layoutManager = lm
         binding.rcvOrganization.adapter = adapter
     }
-
-
 }

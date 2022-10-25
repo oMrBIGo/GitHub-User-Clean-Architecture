@@ -16,29 +16,29 @@
         android:layout_height="wrap_content"
         android:background="@color/background"
         android:paddingStart="@dimen/spacing_medium"
+        android:paddingTop="@dimen/spacing5"
         android:paddingEnd="@dimen/spacing_medium"
-        android:paddingBottom="@dimen/spacing_medium"
-        android:paddingTop="@dimen/spacing5">
+        android:paddingBottom="@dimen/spacing_medium">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cv_image_organization"
             android:layout_width="@dimen/spacing33"
             android:layout_height="@dimen/spacing33"
-            app:cardCornerRadius="@dimen/spacing5"
-            app:cardElevation="@dimen/spacing3"
             android:layout_marginStart="@dimen/spacing3"
             android:layout_marginTop="@dimen/spacing10"
             android:layout_marginBottom="@dimen/spacing10"
+            app:cardCornerRadius="@dimen/spacing5"
+            app:cardElevation="@dimen/spacing3"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent">
+            app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
                 android:id="@+id/imv_image_organization"
+                imageUrl="@{model.avatarUrl}"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                imageUrl="@{model.avatarUrl}"
-                android:scaleType="centerCrop"/>
+                android:scaleType="centerCrop" />
 
         </androidx.cardview.widget.CardView>
 
@@ -46,23 +46,23 @@
             android:id="@+id/txv_title_organization"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/text_color"
             android:layout_marginStart="@dimen/spacing20"
-            android:textSize="@dimen/font16"
             android:text="@{model.login}"
+            android:textColor="@color/text_color"
+            android:textSize="@dimen/font16"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/cv_image_organization"
             app:layout_constraintTop_toTopOf="@+id/cv_image_organization" />
 
         <TextView
             android:id="@+id/txv_des_organization"
+            isVisible="@{!model.description.empty}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            isVisible="@{!model.description.empty}"
+            android:layout_marginTop="@dimen/spacing3"
             android:text="@{model.description}"
             android:textColor="@color/text_color"
             android:textSize="@dimen/font16"
-            android:layout_marginTop="@dimen/spacing3"
             app:layout_constraintStart_toStartOf="@+id/txv_title_organization"
             app:layout_constraintTop_toBottomOf="@+id/txv_title_organization" />
 

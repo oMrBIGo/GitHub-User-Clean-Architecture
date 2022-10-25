@@ -54,7 +54,6 @@
                     android:layout_gravity="end"
                     android:layout_marginEnd="@dimen/spacing18"
                     android:background="@android:color/transparent"
-                    android:onClick="@{() -> viewModel.setFavoriteUser()}"
                     android:padding="@dimen/spacing10"
                     android:src="@drawable/ic_favorite"
                     android:tint="@color/color_icon_hint"

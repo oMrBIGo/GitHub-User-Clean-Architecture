@@ -1,5 +1,6 @@
 package org.cn.github.home.userInfo
 
+import NavigationCommand
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
@@ -8,7 +9,9 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import org.cn.github.common.ui.base.BaseViewModel
-import org.cn.github.domain.model.*
+import org.cn.github.domain.model.NetworkResponse
+import org.cn.github.domain.model.RepoList
+import org.cn.github.domain.model.UserInfo
 import org.cn.github.domain.usecase.HomeUseCase
 import org.cn.github.domain.usecase.SecurePreferencesUseCase
 import org.cn.github.home.R

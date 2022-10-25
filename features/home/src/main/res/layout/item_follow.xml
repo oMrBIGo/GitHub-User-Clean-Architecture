@@ -13,10 +13,10 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/spacing15"
-        android:paddingStart="@dimen/spacing_medium"
-        android:paddingEnd="@dimen/spacing_medium"
         android:background="@color/background"
+        android:paddingStart="@dimen/spacing_medium"
+        android:paddingTop="@dimen/spacing15"
+        android:paddingEnd="@dimen/spacing_medium"
         android:paddingBottom="@dimen/spacing15">
 
         <de.hdodenhof.circleimageview.CircleImageView

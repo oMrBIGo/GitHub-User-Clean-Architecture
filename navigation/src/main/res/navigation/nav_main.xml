@@ -10,18 +10,18 @@
 
         <action
             android:id="@+id/action_splashScreenFragment_to_nav_home"
-            app:destination="@+id/nav_home"/>
+            app:destination="@+id/nav_home" />
 
     </fragment>
 
-    <include app:graph="@navigation/nav_home"/>
-    <include app:graph="@navigation/nav_user_more"/>
-    <include app:graph="@navigation/nav_repositories"/>
-    <include app:graph="@navigation/nav_follow"/>
-    <include app:graph="@navigation/nav_userinfo"/>
-    <include app:graph="@navigation/nav_organization"/>
-    <include app:graph="@navigation/nav_search"/>
-    <include app:graph="@navigation/nav_setting"/>
-    <include app:graph="@navigation/nav_favorite"/>
+    <include app:graph="@navigation/nav_home" />
+    <include app:graph="@navigation/nav_user_more" />
+    <include app:graph="@navigation/nav_repositories" />
+    <include app:graph="@navigation/nav_follow" />
+    <include app:graph="@navigation/nav_userinfo" />
+    <include app:graph="@navigation/nav_organization" />
+    <include app:graph="@navigation/nav_search" />
+    <include app:graph="@navigation/nav_setting" />
+    <include app:graph="@navigation/nav_favorite" />
 
 </navigation>

@@ -12,23 +12,23 @@
             android:id="@+id/action_homeFragment_to_nav_search"
             app:destination="@id/nav_search"
             app:popUpTo="@+id/nav_main"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true" />
 
         <action
             android:id="@+id/action_homeFragment_to_nav_setting"
             app:destination="@id/nav_setting"
             app:popUpTo="@+id/nav_main"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true" />
 
         <action
             android:id="@+id/action_homeFragment_to_nav_favorite"
             app:destination="@+id/nav_favorite"
             app:popUpTo="@+id/nav_main"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true" />
 
         <action
             android:id="@+id/action_homeFragment_to_nav_user_more"
-            app:destination="@+id/nav_user_more"/>
+            app:destination="@+id/nav_user_more" />
 
         <action
             android:id="@+id/action_homeFragment_to_nav_userinfo"
@@ -36,18 +36,18 @@
 
             <argument
                 android:name="login"
-                app:argType="string"/>
+                app:argType="string" />
 
             <argument
                 android:name="avatarUrl"
                 android:defaultValue=""
-                app:argType="string"/>
+                app:argType="string" />
 
         </action>
 
         <action
             android:id="@+id/action_homeFragment_to_nav_search1"
-            app:destination="@+id/nav_search"/>
+            app:destination="@+id/nav_search" />
 
     </fragment>
 

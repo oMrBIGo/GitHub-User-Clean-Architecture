@@ -17,11 +17,11 @@
 
         <ImageView
             android:id="@+id/imv_icon_splashscreen"
-            android:src="@drawable/ic_github_logo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:scaleType="centerCrop"
             android:layout_marginTop="@dimen/spacing_micro"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_github_logo"
             android:tileMode="disabled"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

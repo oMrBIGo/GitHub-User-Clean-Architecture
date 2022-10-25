@@ -6,7 +6,6 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import org.cn.github.domain.model.FollowersList
-import org.cn.github.domain.model.UserList
 import org.cn.github.home.R
 import org.cn.github.home.databinding.ItemFollowBinding
 

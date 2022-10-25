@@ -1,14 +1,13 @@
 package org.cn.github.home.follow
 
+import NavigationCommand
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import org.cn.github.common.ui.base.BaseViewModel
 import org.cn.github.domain.model.FollowersList
 import org.cn.github.domain.model.NetworkResponse
-import org.cn.github.domain.model.UserList
 import org.cn.github.domain.usecase.HomeUseCase
-import org.cn.github.home.HomeFragmentDirections
 import org.cn.github.home.R
 
 class FollowViewModel(

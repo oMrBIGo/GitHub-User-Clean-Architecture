@@ -55,8 +55,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
                     android:layout_marginEnd="@dimen/spacing_medium"
-                    android:text="@string/language_select"
                     android:onClick="@{() -> viewModel.displaySearch()}"
+                    android:text="@string/language_select"
                     android:textColor="@color/colorPrimary"
                     android:textSize="@dimen/font18"
                     android:textStyle="bold"
@@ -190,13 +190,13 @@
             layout="@layout/view_bottom_menu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:favoriteAction="@{viewModel.displayFavorite}"
             app:isHomeSelected="@{true}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:favoriteAction="@{viewModel.displayFavorite}"
             app:searchAction="@{viewModel.displaySearch}"
-            app:settingAction="@{viewModel.displaySetting}"/>
+            app:settingAction="@{viewModel.displaySetting}" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

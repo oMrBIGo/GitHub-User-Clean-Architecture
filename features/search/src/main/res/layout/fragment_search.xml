@@ -127,12 +127,12 @@
             layout="@layout/view_bottom_menu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            app:favoriteAction="@{viewModel.displayFavorite}"
+            app:homeAction="@{viewModel.displayHome}"
             app:isSearchSelected="@{true}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:homeAction="@{viewModel.displayHome}"
-            app:favoriteAction="@{viewModel.displayFavorite}"
             app:settingAction="@{viewModel.displaySetting}" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

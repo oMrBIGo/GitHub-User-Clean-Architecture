@@ -5,12 +5,10 @@ import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
 import org.cn.github.common.ui.base.BaseFragment
 import org.cn.github.domain.model.FollowersList
-import org.cn.github.domain.model.UserList
 import org.cn.github.home.BR
 import org.cn.github.home.R
 import org.cn.github.home.adapter.FollowListAdapter
 import org.cn.github.home.databinding.FragmentFollowBinding
-import org.cn.github.home.repositories.RepositoriesFragmentArgs
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class FollowFragment : BaseFragment<FollowViewModel, FragmentFollowBinding>() {

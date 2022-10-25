@@ -39,25 +39,25 @@
 
                     <TextView
                         android:id="@+id/txv_title_toolbar_follow"
-                        android:text="@{viewModel.login}"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="@dimen/font14"
                         android:singleLine="true"
+                        android:text="@{viewModel.login}"
                         android:textColor="@color/text_hint_input"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"/>
+                        android:textSize="@dimen/font14"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:text="@string/followers"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:singleLine="true"
+                        android:text="@string/followers"
+                        android:textColor="@color/text_color"
                         android:textSize="@dimen/font18"
                         android:textStyle="bold"
-                        android:textColor="@color/text_color"
-                        android:singleLine="true"
-                        app:layout_constraintTop_toBottomOf="@+id/txv_title_toolbar_follow"
-                        app:layout_constraintStart_toStartOf="parent"/>
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/txv_title_toolbar_follow" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 

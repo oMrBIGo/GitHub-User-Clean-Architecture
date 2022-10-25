@@ -41,6 +41,5 @@ class SearchUserListMapper : Mapper<SearchUserListEntity?, ArrayList<SearchUserL
             )
         }
         return itemList
-
     }
 }

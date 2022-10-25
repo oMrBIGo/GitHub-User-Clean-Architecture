@@ -12,19 +12,19 @@
             android:id="@+id/action_favoriteFragment_to_nav_home"
             app:destination="@+id/nav_home"
             app:popUpTo="@+id/nav_main"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true" />
 
         <action
             android:id="@+id/action_favoriteFragment_to_nav_search"
             app:destination="@id/nav_search"
             app:popUpTo="@+id/nav_main"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true" />
 
         <action
             android:id="@+id/action_favoriteFragment_to_nav_setting"
             app:destination="@id/nav_setting"
             app:popUpTo="@+id/nav_main"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true" />
 
     </fragment>
 

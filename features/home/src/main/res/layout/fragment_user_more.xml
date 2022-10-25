@@ -35,13 +35,13 @@
 
                 <TextView
                     style="@style/TextActionBar"
-                    android:text="@string/user_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:ellipsize="end"
                     android:gravity="center"
-                    android:singleLine="true" />
+                    android:singleLine="true"
+                    android:text="@string/user_title" />
 
             </com.google.android.material.appbar.MaterialToolbar>
 

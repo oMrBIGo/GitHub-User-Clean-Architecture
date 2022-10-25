@@ -14,13 +14,13 @@
 
             <argument
                 android:name="login"
-                app:argType="string"/>
+                app:argType="string" />
 
             <argument
                 android:name="avatar"
-                app:argType="string"/>
+                app:argType="string" />
         </action>
-        
+
     </fragment>
 
 </navigation>

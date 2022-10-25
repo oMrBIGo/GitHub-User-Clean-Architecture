@@ -46,4 +46,6 @@ class SecurePreferencesUseCase(private val repo: SecurePreferenceRepository) {
 
     fun getKeyUsername() = repo.getKeyUsername()
 
+    fun getKeyFavorite() = repo.getKeyFavorite()
+
 }

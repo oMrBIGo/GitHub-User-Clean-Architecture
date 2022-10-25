@@ -15,7 +15,7 @@ import org.cn.github.search.databinding.ItemSearchListBinding
 class SearchListAdapter(
     private val result: ArrayList<SearchUserList.Item>,
     private val onItemClickListener: OnItemClickListener,
-    private val searchText: String?
+    private val searchText: String?,
 ) : RecyclerView.Adapter<SearchListAdapter.ViewHolder>() {
 
     interface OnItemClickListener {
@@ -45,7 +45,7 @@ class SearchListAdapter(
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(
-            position: Int
+            position: Int,
         ) {
             binding.model = result[position]
             val login = result[position].login
@@ -53,7 +53,7 @@ class SearchListAdapter(
                 val sb = SpannableStringBuilder(login)
                 var index: Int = (login.indexOf(searchText))
                 while (index >= 0 && index < login.length) {
-                    val fcs = BackgroundColorSpan(Color.rgb(0,200,200))
+                    val fcs = BackgroundColorSpan(Color.rgb(0, 200, 200))
                     sb.setSpan(
                         fcs,
                         index,

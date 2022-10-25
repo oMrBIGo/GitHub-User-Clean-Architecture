@@ -20,4 +20,6 @@ interface SecurePreferenceRepository {
     fun getKeyEmail(): String
     fun getKeyPassword(): String
     fun getKeyUsername(): String
+    fun getKeyFavorite(): String
+
 }
