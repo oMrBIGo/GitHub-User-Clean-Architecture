@@ -18,15 +18,6 @@ internal class NetworkResponseCall<S : Any, E : Any>(
     private val errorConverter: Converter<ResponseBody, E>
 ) : Call<NetworkResponse<S, E>> {
 
-    companion object {
-        const val RESPONSE_STATUS = "responseStatus"
-        const val CODE = "code"
-        const val OPERATION = "operation"
-        const val MESSAGE = "message"
-        const val MESSAGE_TYPE = "messageType"
-        const val STATUS = "status"
-    }
-
     override fun enqueue(callback: Callback<NetworkResponse<S, E>>) {
         return delegate.enqueue(object : Callback<S> {
             override fun onResponse(call: Call<S>, response: Response<S>) {
@@ -38,16 +29,6 @@ internal class NetworkResponseCall<S : Any, E : Any>(
                     if (body != null) {
                         /** Response is successful but the responseStatus code success **/
                         callback.onResponse(this@NetworkResponseCall,Response.success(NetworkResponse.Success(body)))
-//                        val responseStatus = getStatusCode(body)
-//                        if (responseStatus.code == CommonError.SUCCESS.code) {
-//                            callback.onResponse(
-//                                this@NetworkResponseCall,
-//                                Response.success(NetworkResponse.Success(body))
-//                            )
-//                        } else {
-//                            /** Response is successful but the responseStatus code error **/
-//                            checkResponseStatusError(callback, responseStatus)
-//                        }
                     } else {
                         /** Response is successful but the body is null **/
                         callback.onResponse(
@@ -73,21 +54,6 @@ internal class NetworkResponseCall<S : Any, E : Any>(
                 callback.onResponse(this@NetworkResponseCall, Response.success(networkResponse))
             }
         })
-    }
-
-    private fun checkResponseStatusError(
-        callback: Callback<NetworkResponse<S, E>>,
-        responseStatus: org.cn.github.domain.model.CommonError
-    ) {
-        callback.onResponse(
-            this@NetworkResponseCall,
-            Response.success(
-                NetworkResponse.ApiError(
-                    responseStatus as E,
-                    responseStatus.code
-                )
-            )
-        )
     }
 
     private fun checkResponseApiError(
@@ -124,15 +90,6 @@ internal class NetworkResponseCall<S : Any, E : Any>(
                 )
             )
         }
-    }
-
-    private fun getStatusCode(body: S): org.cn.github.domain.model.CommonError {
-        val responseStatus = JSONObject(Gson().toJson(body)).getJSONObject(RESPONSE_STATUS)
-        return org.cn.github.domain.model.CommonError(responseStatus.getString(CODE),
-            responseStatus.getString(MESSAGE),
-            responseStatus.getString(MESSAGE_TYPE),
-            responseStatus.getString(OPERATION),
-            responseStatus.getString(STATUS))
     }
 
     override fun isExecuted() = delegate.isExecuted

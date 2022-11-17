@@ -9,12 +9,10 @@ import org.cn.github.domain.model.NetworkResponse
 import org.cn.github.domain.model.UserList
 import org.cn.github.domain.usecase.HomeUseCase
 import org.cn.github.domain.usecase.SecurePreferencesUseCase
-import org.cn.github.domain.utils.BuildConfigManager
 
 class HomeViewModel(
     private val homeUseCase: HomeUseCase,
-    private val securePreferencesUseCase: SecurePreferencesUseCase,
-    private val buildConfigManager: BuildConfigManager
+    private val securePreferencesUseCase: SecurePreferencesUseCase
 ) : BaseViewModel() {
 
     var userListResult = MutableLiveData<ArrayList<UserList>>()

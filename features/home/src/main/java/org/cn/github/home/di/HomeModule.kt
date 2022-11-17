@@ -10,7 +10,7 @@ import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 val featureHome = module {
-    viewModel { HomeViewModel(get(), get(), get()) }
+    viewModel { HomeViewModel(get(), get()) }
     viewModel { UserMoreViewModel(get()) }
     viewModel { RepositoriesViewModel(get()) }
     viewModel { FollowViewModel(get()) }
