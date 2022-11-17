@@ -49,26 +49,20 @@
         android:elevation="@dimen/spacing10"
         android:background="@color/background_light">
 
-        <androidx.constraintlayout.widget.Guideline
-            android:id="@+id/guideline_25_view_bottom_menu"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.25" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_50_view_bottom_menu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.50" />
+            app:layout_constraintGuide_percent="0.33" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline_75_view_bottom_menu"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.75" />
+            app:layout_constraintGuide_percent="0.66" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/cly_home_view_bottom_menu"
@@ -79,7 +73,7 @@
             android:onClick="@{() -> homeAction.invoke()}"
             android:paddingBottom="@dimen/spacing_micro"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/guideline_25_view_bottom_menu"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_50_view_bottom_menu"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
@@ -107,46 +101,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imv_home_view_buttom_menu" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cly_favorite_view_bottom_menu"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:background="@drawable/ripple_menu_light"
-            android:clickable="true"
-            android:onClick="@{() -> favoriteAction.invoke()}"
-            android:paddingBottom="@dimen/spacing_micro"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/guideline_50_view_bottom_menu"
-            app:layout_constraintStart_toStartOf="@id/guideline_25_view_bottom_menu"
-            app:layout_constraintTop_toTopOf="parent">
-
-            <ImageView
-                android:id="@+id/imv_favorite_view_buttom_menu"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/spacing10"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:srcCompat="@drawable/ic_favorite"
-                android:tint="@{isFavoriteSelected?@color/color_select:@color/color_no_select}"
-                tools:ignore="UseAppTint" />
-
-            <TextView
-                android:id="@+id/txv_favorite_view_buttom_menu"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/spacing_micro"
-                android:fontFamily="@font/default_noto_sans_thai"
-                android:text="@string/menu_favorite"
-                android:textColor="@{isFavoriteSelected?@color/color_select:@color/color_no_select}"
-                android:textSize="@dimen/font12"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imv_favorite_view_buttom_menu" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

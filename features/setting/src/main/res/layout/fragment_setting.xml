@@ -19,7 +19,6 @@
             layout="@layout/view_bottom_menu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:favoriteAction="@{viewModel.displayFavorite}"
             app:homeAction="@{viewModel.displayHome}"
             app:isSettingSelected="@{true}"
             app:layout_constraintBottom_toBottomOf="parent"

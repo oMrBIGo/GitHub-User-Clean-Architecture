@@ -21,12 +21,6 @@
             app:popUpToInclusive="true" />
 
         <action
-            android:id="@+id/action_homeFragment_to_nav_favorite"
-            app:destination="@+id/nav_favorite"
-            app:popUpTo="@+id/nav_main"
-            app:popUpToInclusive="true" />
-
-        <action
             android:id="@+id/action_homeFragment_to_nav_user_more"
             app:destination="@+id/nav_user_more" />
 

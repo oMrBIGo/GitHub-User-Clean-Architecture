@@ -58,7 +58,6 @@ dependencies {
     implementation project(Modules.featureHome)
     implementation project(Modules.featureSearch)
     implementation project(Modules.featureSetting)
-    implementation project(Modules.featureFavorite)
 
     implementation Deps.material
     implementation Deps.koin

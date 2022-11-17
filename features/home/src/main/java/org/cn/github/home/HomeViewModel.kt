@@ -79,14 +79,6 @@ class HomeViewModel(
         )
     }
 
-    val displayFavorite: () -> Unit = {
-        navigate(
-            NavigationCommand.To(
-                HomeFragmentDirections.actionHomeFragmentToNavFavorite()
-            )
-        )
-    }
-
     val displaySearch: () -> Unit = {
         navigate(
             NavigationCommand.To(
